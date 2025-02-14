@@ -1,29 +1,29 @@
 import React from 'react';
 import { Card, Text, Heading, Box } from '@radix-ui/themes';
 
-// Define all image paths using const
-const springShoot1 = process.env.PUBLIC_URL + '/images/DSC02197.jpg';
-const springShoot2 = process.env.PUBLIC_URL + '/images/DSC02219.jpg';
-const springShoot3 = process.env.PUBLIC_URL + '/images/DSC02245.jpg';
-const springShoot4 = process.env.PUBLIC_URL + '/images/DSC02282.jpg';
-const springShoot5 = process.env.PUBLIC_URL + '/images/trio.jpg';
-const springShoot6 = process.env.PUBLIC_URL + '/images/trio3.jpg';
+// Import images directly from src/assets/images
+import springShoot1 from '../assets/images/DSC02197.jpg';
+import springShoot2 from '../assets/images/DSC02219.jpg';
+import springShoot3 from '../assets/images/DSC02245.jpg';
+import springShoot4 from '../assets/images/DSC02282.jpg';
+import springShoot5 from '../assets/images/trio.jpg';
+import springShoot6 from '../assets/images/trio3.jpg';
 
-const fallShoot1 = process.env.PUBLIC_URL + '/images/TrinityWilliams-11.jpg';
-const fallShoot2 = process.env.PUBLIC_URL + '/images/TrinityWilliams-12.jpg';
-const fallShoot3 = process.env.PUBLIC_URL + '/images/TrinityWilliams-14.jpg';
-const fallShoot4 = process.env.PUBLIC_URL + '/images/TrinityWilliams.jpg';
+import fallShoot1 from '../assets/images/TrinityWilliams-11.jpg';
+import fallShoot2 from '../assets/images/TrinityWilliams-12.jpg';
+import fallShoot3 from '../assets/images/TrinityWilliams-14.jpg';
+import fallShoot4 from '../assets/images/TrinityWilliams.jpg';
 
-const collection1 = process.env.PUBLIC_URL + '/images/_N3A5004.jpg';
-const collection2 = process.env.PUBLIC_URL + '/images/Copy of DSC03680.jpg';
-const collection3 = process.env.PUBLIC_URL + '/images/DSC_4476.jpg';
-const collection4 = process.env.PUBLIC_URL + '/images/2024.03.15-193951 edit.jpg';
-const collection5 = process.env.PUBLIC_URL + '/images/DSC_6825.jpg';
-const collection6 = process.env.PUBLIC_URL + '/images/DSC_6833.jpg';
-const collection7 = process.env.PUBLIC_URL + '/images/DSC_6839.jpg';
-const collection8 = process.env.PUBLIC_URL + '/images/2024.03.15-193855 edit.jpg';
-const collection9 = process.env.PUBLIC_URL + '/images/2024.03.15-193928 edit.jpg';
-const collection10 = process.env.PUBLIC_URL + '/images/2024.03.15-193941 edit.jpg';
+import collection1 from '../assets/images/_N3A5004.jpg';
+import collection2 from '../assets/images/Copy of DSC03680.jpg';
+import collection3 from '../assets/images/DSC_4476.jpg';
+import collection4 from '../assets/images/2024.03.15-193951 edit.jpg';
+import collection5 from '../assets/images/DSC_6825.jpg';
+import collection6 from '../assets/images/DSC_6833.jpg';
+import collection7 from '../assets/images/DSC_6839.jpg';
+import collection8 from '../assets/images/2024.03.15-193855 edit.jpg';
+import collection9 from '../assets/images/2024.03.15-193928 edit.jpg';
+import collection10 from '../assets/images/2024.03.15-193941 edit.jpg';
 
 function Apparel() {
   const collections = [

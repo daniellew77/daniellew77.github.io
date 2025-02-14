@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/me/static/css/main.ba02e3b0.css",
+    "main.js": "/me/static/js/main.0cbf4dc4.js",
+    "static/media/fourier.mp4": "/me/static/media/fourier.af0e34ba7938d44a6d81.mp4",
+    "static/media/zebra_simulation.gif": "/me/static/media/zebra_simulation.065756a527aec96b2e6f.gif",
+    "static/media/giraffe_simulation.gif": "/me/static/media/giraffe_simulation.3e4ab9306d10754ccbcf.gif",
+    "static/media/honey_simulation.gif": "/me/static/media/honey_simulation.bce1dd9398c5f3368139.gif",
+    "static/media/leopard_simulation.gif": "/me/static/media/leopard_simulation.2f9c73f2de6debf38ae5.gif",
+    "static/media/landing.jpeg": "/me/static/media/landing.9bb481eea9fdc9a53a64.jpeg",
+    "static/media/quiz_screen.jpeg": "/me/static/media/quiz_screen.7a2dc4f310b1843a8e67.jpeg",
+    "static/media/vid_screen.jpeg": "/me/static/media/vid_screen.e95a0223932c7548f8c0.jpeg",
+    "static/media/main.jpg": "/me/static/media/main.4152b3d20fd2a36326ea.jpg",
+    "static/media/gnb_roc_curve.png": "/me/static/media/gnb_roc_curve.8b06a015d31dfd53e4d3.png",
+    "static/media/zebra_real.jpg": "/me/static/media/zebra_real.76c267c6a463b00e01f1.jpg",
+    "static/media/gnb_feature_importance.png": "/me/static/media/gnb_feature_importance.be666ee0f7e050692e5a.png",
+    "static/media/gnb_confusion_matrix.png": "/me/static/media/gnb_confusion_matrix.01dfc18abe00c5b13266.png",
+    "static/media/gnb_architecture.png": "/me/static/media/gnb_architecture.0e095e7a33a12efd6a9a.png",
+    "static/media/giraffe_real.jpg": "/me/static/media/giraffe_real.db3a5929b27d13af98db.jpg",
+    "static/media/leopard_real.jpg": "/me/static/media/leopard_real.25c1c8a7ab02f51dabdc.jpg",
+    "static/media/honey_real.jpg": "/me/static/media/honey_real.c66db717220ddb4cffc8.jpg",
+    "static/media/slick.svg": "/me/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/me/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/me/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/me/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/me/index.html",
+    "main.ba02e3b0.css.map": "/me/static/css/main.ba02e3b0.css.map",
+    "main.0cbf4dc4.js.map": "/me/static/js/main.0cbf4dc4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba02e3b0.css",
+    "static/js/main.0cbf4dc4.js"
+  ]
+}
