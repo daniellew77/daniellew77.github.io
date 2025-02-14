@@ -14,7 +14,7 @@ import fallShoot2 from '../assets/images/TrinityWilliams-12.jpg';
 import fallShoot3 from '../assets/images/TrinityWilliams-14.jpg';
 import fallShoot4 from '../assets/images/TrinityWilliams.jpg';
 
-import collection1 from '../assets/images/_N3A5004.jpg';
+import collection1 from '../assets/images/spring1.jpg';
 import collection2 from '../assets/images/Copy of DSC03680.jpg';
 import collection3 from '../assets/images/DSC_4476.jpg';
 import collection4 from '../assets/images/2024.03.15-193951 edit.jpg';
