@@ -1,17 +1,17 @@
 import React from 'react';
 import { Card, Text, Heading, Box } from '@radix-ui/themes';
-// Import images
-import springShoot1 from '../assets/images/DSC02197.jpg';
-import springShoot2 from '../assets/images/DSC02219.jpg';
-import springShoot3 from '../assets/images/DSC02245.jpg';
-import springShoot4 from '../assets/images/DSC02282.jpg';
-import springShoot5 from '../assets/images/trio.jpg';
-import springShoot6 from '../assets/images/trio3.jpg';
+// Update image imports to use process.env.PUBLIC_URL
+const springShoot1 = process.env.PUBLIC_URL + '/images/DSC02197.jpg';
+const springShoot2 = process.env.PUBLIC_URL + '/images/DSC02219.jpg';
+const springShoot3 = process.env.PUBLIC_URL + '/images/DSC02245.jpg';
+const springShoot4 = process.env.PUBLIC_URL + '/images/DSC02282.jpg';
+const springShoot5 = process.env.PUBLIC_URL + '/images/trio.jpg';
+const springShoot6 = process.env.PUBLIC_URL + '/images/trio3.jpg';
 
-import fallShoot1 from '../assets/images/TrinityWilliams-11.jpg';
-import fallShoot2 from '../assets/images/TrinityWilliams-12.jpg';
-import fallShoot3 from '../assets/images/TrinityWilliams-14.jpg';
-import fallShoot4 from '../assets/images/TrinityWilliams.jpg';
+import fallShoot1 from process.env.PUBLIC_URL + '/images/TrinityWilliams-11.jpg';
+import fallShoot2 from process.env.PUBLIC_URL + '/images/TrinityWilliams-12.jpg';
+import fallShoot3 from process.env.PUBLIC_URL + '/images/TrinityWilliams-14.jpg';
+import fallShoot4 from process.env.PUBLIC_URL + '/images/TrinityWilliams.jpg';
 
 import collection1 from '../assets/images/_N3A5004.jpg';
 import collection2 from '../assets/images/Copy of DSC03680.jpg';
