@@ -1,34 +1,14 @@
 {
   "files": {
     "main.css": "/me/static/css/main.ba02e3b0.css",
-    "main.js": "/me/static/js/main.e4626918.js",
+    "main.js": "/me/static/js/main.0cbf4dc4.js",
     "static/media/fourier.mp4": "/me/static/media/fourier.af0e34ba7938d44a6d81.mp4",
-    "static/media/_N3A5004.jpg": "/me/static/media/_N3A5004.41b884c7863119d7fec6.jpg",
-    "static/media/TrinityWilliams-14.jpg": "/me/static/media/TrinityWilliams-14.5903c272d4991d3345e3.jpg",
-    "static/media/2024.03.15-193941 edit.jpg": "/me/static/media/2024.03.15-193941 edit.17260c26a26b5460a647.jpg",
-    "static/media/2024.03.15-193951 edit.jpg": "/me/static/media/2024.03.15-193951 edit.10ccc89e8a41148700c8.jpg",
-    "static/media/TrinityWilliams-12.jpg": "/me/static/media/TrinityWilliams-12.82236d907cbba0e2ac36.jpg",
-    "static/media/2024.03.15-193855 edit.jpg": "/me/static/media/2024.03.15-193855 edit.3d2991df897f3f5e6813.jpg",
-    "static/media/2024.03.15-193928 edit.jpg": "/me/static/media/2024.03.15-193928 edit.479dc91f325c50bb9eda.jpg",
-    "static/media/TrinityWilliams-11.jpg": "/me/static/media/TrinityWilliams-11.a71e4dfc94a5f211d6e2.jpg",
-    "static/media/trio3.jpg": "/me/static/media/trio3.562a5a4b834efd5a0485.jpg",
     "static/media/zebra_simulation.gif": "/me/static/media/zebra_simulation.065756a527aec96b2e6f.gif",
-    "static/media/DSC_6825.jpg": "/me/static/media/DSC_6825.eb755468ada658f4e7f9.jpg",
-    "static/media/DSC_6839.jpg": "/me/static/media/DSC_6839.df7cb87e5d88f18e6252.jpg",
     "static/media/giraffe_simulation.gif": "/me/static/media/giraffe_simulation.3e4ab9306d10754ccbcf.gif",
-    "static/media/DSC_4476.jpg": "/me/static/media/DSC_4476.c42df0acaddec0d83f70.jpg",
-    "static/media/Copy of DSC03680.jpg": "/me/static/media/Copy of DSC03680.3eacaeb7d7e2b043f727.jpg",
-    "static/media/DSC02282.jpg": "/me/static/media/DSC02282.b41b555938ec9c19b3f6.jpg",
-    "static/media/DSC_6833.jpg": "/me/static/media/DSC_6833.922c87f84e23f9f9092a.jpg",
-    "static/media/trio.jpg": "/me/static/media/trio.45a6a3686ce8f5df24db.jpg",
     "static/media/honey_simulation.gif": "/me/static/media/honey_simulation.bce1dd9398c5f3368139.gif",
     "static/media/leopard_simulation.gif": "/me/static/media/leopard_simulation.2f9c73f2de6debf38ae5.gif",
-    "static/media/DSC02219.jpg": "/me/static/media/DSC02219.dea4946902e2b6c9ec0c.jpg",
-    "static/media/DSC02245.jpg": "/me/static/media/DSC02245.c07ac315fa4c0a537d0d.jpg",
     "static/media/landing.jpeg": "/me/static/media/landing.9bb481eea9fdc9a53a64.jpeg",
-    "static/media/DSC02197.jpg": "/me/static/media/DSC02197.ff1960a663e561d59c96.jpg",
     "static/media/quiz_screen.jpeg": "/me/static/media/quiz_screen.7a2dc4f310b1843a8e67.jpeg",
-    "static/media/TrinityWilliams.jpg": "/me/static/media/TrinityWilliams.c553a013c1519908d466.jpg",
     "static/media/vid_screen.jpeg": "/me/static/media/vid_screen.e95a0223932c7548f8c0.jpeg",
     "static/media/main.jpg": "/me/static/media/main.4152b3d20fd2a36326ea.jpg",
     "static/media/gnb_roc_curve.png": "/me/static/media/gnb_roc_curve.8b06a015d31dfd53e4d3.png",
@@ -45,10 +25,10 @@
     "static/media/slick.woff": "/me/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/me/index.html",
     "main.ba02e3b0.css.map": "/me/static/css/main.ba02e3b0.css.map",
-    "main.e4626918.js.map": "/me/static/js/main.e4626918.js.map"
+    "main.0cbf4dc4.js.map": "/me/static/js/main.0cbf4dc4.js.map"
   },
   "entrypoints": [
     "static/css/main.ba02e3b0.css",
-    "static/js/main.e4626918.js"
+    "static/js/main.0cbf4dc4.js"
   ]
 }
