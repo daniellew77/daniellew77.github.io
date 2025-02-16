@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <div className="header-content">
-        <Heading as="h1" size="8">Danielle Whisnant</Heading>
+        <Heading as="h1" size="8">Danielle   Whisnant</Heading>
       </div>
     </header>
   );

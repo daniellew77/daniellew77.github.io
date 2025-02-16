@@ -39,7 +39,7 @@ function Projects() {
         { type: 'video', src: illuminate5 }
       ],
       bulletPoints: [
-        "Used LangChain to convert user prompts into lesson plans, scripts, and animation",
+        "Utilized LangChain to convert user prompts into lesson plans, scripts, and animation",
         "Generated interactive quizzes to test user comprehension",
         "Built frontend interface using React, including landing page, personalized settings, and quiz components",
         "Implemented AWS (EC2, S3, ApiGateway, Lambda) for scalable deployment",
@@ -68,7 +68,7 @@ function Projects() {
         "Implemented the Cahn-Hilliard partial differential equation: ∂φ/∂t = M ∇² (φ³ - φ - ε² ∇²φ)",
         "Simulated pattern formation for zebras, giraffes, leopards, and honeycomb over time using Python and numerical methods",
         "Created side-by-side comparisons of simulated patterns with real animal prints",
-        "Demonstrated how biological patterns emerge from simple mathematical principles!"
+        "Demonstrated how biological patterns emerge from simple mathematical principles"
       ],
       technologies: [
         "Python", "NumPy", "SciPy", "Matplotlib", "PDEs", "Scientific Computing"
@@ -86,7 +86,7 @@ function Projects() {
         { type: 'image', src: gnbFeatures }
       ],
       bulletPoints: [
-        "Implemented complete Gaussian Naive Bayes algorithm from scratch using only NumPy",
+        "Implemented complete Gaussian Naive Bayes algorithm from ground up using only NumPy",
         "Developed custom feature scaling and probability calculation functions",
         "Achieved 85% accuracy on heart disease prediction, matching scikit-learn's performance",
         "Created visualization suite for model diagnostics and feature analysis",

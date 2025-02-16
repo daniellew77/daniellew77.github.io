@@ -18,7 +18,7 @@ function Publications() {
       title: "Physicians for Human Rights",
       authors: "Programs Intern",
       bulletPoints: [
-        "Build Istanbul Protocol training for Ukrainian clinicians documenting torture and sexual violence (to be taught on-site in Kyiv in May 2025)",
+        "Build Istanbul Protocol training for Ukrainian clinicians documenting torture and sexual violence (to be launched in Kyiv in May 2025)",
         "Lead internal all-staff briefings on AI/ML models and their applications to human rights and public health work"
       ]
     },
