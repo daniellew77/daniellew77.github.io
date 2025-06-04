@@ -97,6 +97,7 @@ function Apparel() {
 
   return (
     <div className="apparel-section">
+      <h2 className="section-title">Apparel</h2>
       {collections.map(collection => (
         <section key={collection.id} className="collection-container">
           <h2>{collection.name}</h2>

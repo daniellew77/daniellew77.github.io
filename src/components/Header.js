@@ -5,7 +5,8 @@ function Header() {
   return (
     <header>
       <div className="header-content">
-        <Heading as="h1" size="8">Danielle   Whisnant</Heading>
+        <Heading as="h1" size="9">Danielle Whisnant</Heading>
+        <p className="hero-subtitle">Applied Mathematics-Biology • Computer Science • Public Health</p>
       </div>
     </header>
   );
