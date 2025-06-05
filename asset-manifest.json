@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/me/static/css/main.563d7d3c.css",
-    "main.js": "/me/static/js/main.797d029f.js",
+    "main.css": "/me/static/css/main.90efdef5.css",
+    "main.js": "/me/static/js/main.820175a9.js",
     "static/media/lullabieswhole.JPG": "/me/static/media/lullabieswhole.af90620faaf1b22f35fd.JPG",
     "static/media/marback.JPG": "/me/static/media/marback.99921b11c270922f1f6c.JPG",
     "static/media/fourier.mp4": "/me/static/media/fourier.af0e34ba7938d44a6d81.mp4",
@@ -40,6 +40,7 @@
     "static/media/DSC02219.jpg": "/me/static/media/DSC02219.dea4946902e2b6c9ec0c.jpg",
     "static/media/DSC02245.jpg": "/me/static/media/DSC02245.c07ac315fa4c0a537d0d.jpg",
     "static/media/landing.jpeg": "/me/static/media/landing.9bb481eea9fdc9a53a64.jpeg",
+    "static/media/me_headshot.png": "/me/static/media/me_headshot.ede426db08feee003925.png",
     "static/media/DSC02197.jpg": "/me/static/media/DSC02197.ff1960a663e561d59c96.jpg",
     "static/media/quiz_screen.jpeg": "/me/static/media/quiz_screen.7a2dc4f310b1843a8e67.jpeg",
     "static/media/TrinityWilliams.jpg": "/me/static/media/TrinityWilliams.c553a013c1519908d466.jpg",
@@ -64,11 +65,11 @@
     "static/media/slick.ttf": "/me/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/me/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/me/index.html",
-    "main.563d7d3c.css.map": "/me/static/css/main.563d7d3c.css.map",
-    "main.797d029f.js.map": "/me/static/js/main.797d029f.js.map"
+    "main.90efdef5.css.map": "/me/static/css/main.90efdef5.css.map",
+    "main.820175a9.js.map": "/me/static/js/main.820175a9.js.map"
   },
   "entrypoints": [
-    "static/css/main.563d7d3c.css",
-    "static/js/main.797d029f.js"
+    "static/css/main.90efdef5.css",
+    "static/js/main.820175a9.js"
   ]
 }
