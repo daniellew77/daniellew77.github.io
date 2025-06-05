@@ -321,12 +321,30 @@ header h1 {
 
 .hero-subtitle {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--blue-11);
-    margin: 0;
+    margin: 1.5rem 0 0 0;
     font-weight: 400;
     opacity: 0.9;
     letter-spacing: 0.5px;
+}
+
+/* Typewriter Effect Styles */
+.typewriter-text {
+    display: inline-block;
+    min-height: 1.4em; /* Ensures consistent height to prevent layout shift */
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--blue-11);
+    animation: blink 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 /* Section Content Styles */
@@ -348,6 +366,20 @@ header h1 {
 }
 
 /* About Section */
+#about {
+    position: relative;
+}
+
+#about h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--blue-11);
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
 #about p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -355,6 +387,98 @@ header h1 {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-image {
+    flex-shrink: 0;
+}
+
+.headshot {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--radius-4);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.headshot:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
+}
+
+.about-text {
+    flex: 1;
+    position: relative;
+}
+
+.about-text p {
+    text-align: left;
+    margin: 0 0 1.5rem 0;
+    max-width: none;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Desktop layout: Position heading above text content */
+@media (min-width: 769px) {
+    #about h2 {
+        position: absolute;
+        top: -4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: calc(280px / 2 + 1.5rem); /* Offset by half image width + half gap */
+        width: max-content;
+        z-index: 1;
+    }
+    
+    .about-content {
+        margin-top: 2rem;
+    }
+}
+
+/* Responsive design for About section */
+@media (max-width: 768px) {
+    #about h2 {
+        position: static;
+        transform: none;
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 0;
+    }
+    
+    .headshot {
+        width: 240px;
+        height: 300px;
+    }
+    
+    .about-text p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .headshot {
+        width: 200px;
+        height: 250px;
+    }
 }
 
 /* Publications Section */
@@ -1176,6 +1300,180 @@ header h1 {
 }
 
 /* Contact Section */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.contact-form-section h3,
+.contact-links-section h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--blue-11);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background: var(--content-bg);
+    padding: 2rem;
+    border-radius: var(--radius-4);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-form:hover {
+    border-color: var(--blue-9);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--blue-11);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--background);
+    border: 2px solid var(--slate-6);
+    border-radius: var(--radius-2);
+    color: var(--slate-11);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue-9);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--blue-9), var(--blue-11));
+    color: var(--slate-1);
+    border: none;
+    border-radius: var(--radius-2);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.submit-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.status-message {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-2);
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.status-message.success {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-message.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Contact Links Section */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--content-bg);
+    border: 1px solid transparent;
+    border-radius: var(--radius-4);
+    color: var(--slate-11);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.contact-link:hover {
+    border-color: var(--blue-9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+    color: var(--slate-1);
+}
+
+.contact-link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.contact-link span {
+    font-size: 1rem;
+}
+
+/* Specific link colors */
+.email-link:hover {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    border-color: #dc2626;
+}
+
+.linkedin-link:hover {
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
+    border-color: #0077b5;
+}
+
+.github-link:hover {
+    background: linear-gradient(135deg, var(--slate-6), var(--slate-5));
+    border-color: var(--slate-6);
+}
+
+/* Legacy contact styles for backward compatibility */
 #contact p {
     font-size: 1.1rem;
     line-height: 1.8;
@@ -1190,16 +1488,45 @@ header h1 {
     height: 20px;
 }
 
-/* General Link Styles */
-a {
-    color: var(--blue-11);
-    text-decoration: none;
-    transition: all 0.2s ease;
+/* Responsive design for Contact section */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 500px;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .contact-link {
+        padding: 1rem 1.25rem;
+    }
+    
+    .contact-link span {
+        font-size: 0.95rem;
+    }
 }
 
-a:hover {
-    color: var(--blue-9);
-    text-decoration: underline;
+@media (max-width: 480px) {
+    .contact-container {
+        gap: 2rem;
+    }
+    
+    .contact-form {
+        padding: 1.25rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .submit-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+    }
 }
 
 /* Animations */
@@ -1751,7 +2078,30 @@ a:hover {
 .rt-Heading,
 .rt-Button,
 .rt-Card,
-[class*="rt-"] {
+.rt-Badge,
+.rt-Separator,
+.rt-HoverCard,
+.rt-Avatar,
+.rt-Tabs,
+[class*="rt-"],
+* {
+    font-family: 'Playfair Display', Georgia, serif !important;
+}
+
+/* Global font override to catch any remaining elements */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
     font-family: 'Playfair Display', Georgia, serif !important;
 }
 
@@ -1826,4 +2176,16 @@ a:hover {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* General Link Styles */
+a {
+    color: var(--blue-11);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: var(--blue-9);
+    text-decoration: underline;
 }

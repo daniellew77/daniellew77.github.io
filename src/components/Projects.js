@@ -128,7 +128,7 @@ function Projects() {
     {
       id: 5,
       title: "This website!",
-      description: "Built with Javascript and React",
+      description: "Built with Javascript, React, and Formspree",
       isWebsiteCard: true // Special flag to identify this card
     }
   ];

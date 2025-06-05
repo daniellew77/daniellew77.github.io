@@ -10,7 +10,7 @@ function Publications() {
     {
       id: 1,
       title: "Brown University Data in Society Collective (DISCO Lab)",
-      authors: "Graduate Researcher for Dr. Harini Suresh",
+      authors: "Graduate Researcher for Dr. Harini Suresh in Department of Computer Science",
       description:
         "Ongoing master's thesis investigating content moderation decisions in the context of human rights documentation"
     }
