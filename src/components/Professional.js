@@ -8,7 +8,7 @@ function Professional() {
       title: "Epic Systems",
       authors: "Software Engineering Intern",
       bulletPoints: [
-        "Incoming intern for the summer of 2025"
+        "Incoming intern for the summer of 2025 on Telehealth R&D team"
       ]
     },
     {

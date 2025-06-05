@@ -17,14 +17,14 @@ function Publications() {
   ];
 
   const pastResearch = [
-    {
-      id: 1,
-      title: "The Use of Armed Escorts for Humanitarian Convoys in Conflict Zones",
-      organization: "Brown University Watson School for International and Public Affairs, Center for Human Rights and Humanitarian Studies",
-      shortDescription: "whatevs",
-      description: "Study in partnership with UN Office for the Coordination of Humanitarian Affairs (OCHA)",
-      link: "https://doi.org/10.26300/01t5-na83",
-    },
+    // {
+    //   id: 1,
+    //   title: "The Use of Armed Escorts for Humanitarian Convoys in Conflict Zones",
+    //   organization: "Brown University Watson School for International and Public Affairs, Center for Human Rights and Humanitarian Studies",
+    //   shortDescription: "whatevs",
+    //   description: "Study in partnership with UN Office for the Coordination of Humanitarian Affairs (OCHA)",
+    //   link: "https://doi.org/10.26300/01t5-na83",
+    // },
     {
       id: 2,
       title: "Delayed and Denied: How Florida's Six-Week Abortion Ban Criminalizes Medical Care",

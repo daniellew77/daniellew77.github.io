@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Theme } from '@radix-ui/themes';
 import Header from './components/Header';
 import About from './components/About';
-import Projects from './components/Projects';
+import Academics from './components/Academics';
 import Publications from './components/Publications';
 import Professional from './components/Professional';
+import Projects from './components/Projects';
 import Apparel from './components/Apparel';
 import Contact from './components/Contact';
 import '@radix-ui/themes/styles.css';
@@ -24,7 +25,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'publications', 'professional', 'projects', 'apparel', 'contact'];
+      const sections = ['home', 'about', 'academics', 'publications', 'professional', 'projects', 'apparel', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -87,6 +88,14 @@ function App() {
               </li>
               <li>
                 <button 
+                  className={`nav-item ${activeSection === 'academics' ? 'active' : ''}`}
+                  onClick={() => scrollToSection('academics')}
+                >
+                  Academics
+                </button>
+              </li>
+              <li>
+                <button 
                   className={`nav-item ${activeSection === 'publications' ? 'active' : ''}`}
                   onClick={() => scrollToSection('publications')}
                 >
@@ -145,6 +154,10 @@ function App() {
 
           <section id="about" className="section">
             <About />
+          </section>
+
+          <section id="academics" className="section">
+            <Academics />
           </section>
 
           <section id="publications" className="section">
