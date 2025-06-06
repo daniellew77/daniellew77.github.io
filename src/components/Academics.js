@@ -90,13 +90,13 @@ function Academics() {
         id: 1,
         course: "GLOH 2260",
         title: "Political Economy of Health and Development",
-        description: "Introductory and intermediate microeconomic analysis of health and development, including demand and supply of health care and health insurance; Taken at Georgetown University"
+        description: "Introductory and intermediate microeconomic analysis of health and development, including demand and supply of health care and health insurance. Taken at Georgetown University"
       },
       {
         id: 2,
         course: "WGST 222",
         title: "Relationship Violence and Sexual Assault",
-        description: "Analysis of intimate partner violence, sexual assault, and stalking in theory and practice; Evaluation of current systems and policies that exist to support survivors and hold perpetrators accountable; Taken at Georgetown University"
+        description: "Analysis of intimate partner violence, sexual assault, and stalking in theory and practice; Evaluation of current systems and policies that exist to support survivors and hold perpetrators accountable. Taken at Georgetown University"
       },
       {
         id: 3,
@@ -108,19 +108,19 @@ function Academics() {
         id: 3,
         course: "GLOH 1140",
         title: "Introduction to Global Health",
-        description: "Introduction to health and health sector issues within the context of comparative biological, social, economic, and political systems; Principles of comparative health systems structure, financing, and reform; Taken at Georgetown University"
+        description: "Introduction to health and health sector issues within the context of comparative biological, social, economic, and political systems; Principles of comparative health systems structure, financing, and reform. Taken at Georgetown University"
       },
       {
         id: 3,
         course: "GLOH 1177",
         title: "Epidemiologic Applications to Population Health",
-        description: "Introduction to epidemiologic methods and applications to population health; Taken at Georgetown University"
+        description: "Introduction to epidemiologic methods and applications to population health. Taken at Georgetown University"
       },
       {
         id: 3,
         course: "HSCI 127",
         title: "Drugs, Health, and Society",
-        description: "Social and cultural determinants, and biological mechanisms of drug use and abuse; Taken at Diablo Valley College"
+        description: "Social and cultural determinants, and biological mechanisms of drug use and abuse. Taken at Diablo Valley College"
       }
     ],
     "Mathematics": [
@@ -198,19 +198,19 @@ function Academics() {
         id: 1,
         course: "HSCI 101 and 102",
         title: "Human Biology I and II",
-        description: "Study of the structure and function of living systems; Two-semester anatomy and physiology sequence with lab; Taken at Georgetown University"
+        description: "Study of the structure and function of living systems; Two-semester anatomy and physiology sequence with lab. Taken at Georgetown University"
       },
       {
         id: 2,
         course: "CHEM 0010 and 0020",
         title: "General Chemistry I and II",
-        description: "Chemical equilibrium, kinetics, and molecular structure; Taken at Georgetown University"
+        description: "Chemical equilibrium, kinetics, and molecular structure. Taken at Georgetown University"
       },
       {
         id: 3,
         course: "CHEM 0350 and 0360",
         title: "Organic Chemistry I and II",
-        description: "Structure, bonding, and reactions of organic molecules; Chemistry of pi bonds and functional groups,"
+        description: "Structure, bonding, and reactions of organic molecules; Chemistry of pi bonds and functional groups"
       },
       {
         id: 4,
@@ -240,50 +240,50 @@ function Academics() {
         id: 2,
         course: "INAF 008",
         title: "Maps of the Modern World",
-        description: "Survey of physical and political geography of the modern world with emphasis on historical, legal, and geographical forces; Taken at Georgetown University"
+        description: "Survey of physical and political geography of the modern world with emphasis on historical, legal, and geographical forces. Taken at Georgetown University"
       },
       {
         id: 3,
         course: "ANTH 140",
         title: "Biological Anthropology",
-        description: "Evolutionary theory and human origins; Taken at Diablo Valley College"
+        description: "Evolutionary theory and human origins. Taken at Diablo Valley College"
       },
       {
         id: 4,
         course: "ANTH 130",
         title: "Cultural Anthropology",
-        description: "Introduction to the study of human societies and cultures; Taken at Diablo Valley College"
+        description: "Introduction to the study of human societies and cultures. Taken at Diablo Valley College"
       },
 
       {
         id: 1,
         course: "JUPS 123",
         title: "Introduction to Justice and Peace Studies",
-        description: "Theoretical and practical perspectives on peace and social justice; Taken at Georgetown University"
+        description: "Theoretical and practical perspectives on peace and social justice. Taken at Georgetown University"
       },
       {
         id: 3,
         course: "THEO 001",
         title: "The Problem of God",
-        description: "Introductory religious studies course; Taken at Georgetown University"
+        description: "Introductory religious studies course. Taken at Georgetown University"
       },
       {
         id: 4,
         course: "PHILO 120",
         title: "Introduction to Ethics",
-        description: "Introduction to ethical theory and practice, including utilitarianism, deontology, and virtue ethics; Taken at Diablo Valley College"
+        description: "Introduction to ethical theory and practice, including utilitarianism, deontology, and virtue ethics. Taken at Diablo Valley College"
       },
       {
         id: 5,
         course: "SOCIO 120",
         title: "Introduction to Sociology",
-        description: "Introduction to sociology, including the study of social structures, social interaction, and social change; Taken at Diablo Valley College"
+        description: "Introduction to sociology, including the study of social structures, social interaction, and social change. Taken at Diablo Valley College"
       },
       {
         id: 6,
         course: "FTVE 282",
         title: "American Cinema 1950-Present",
-        description: "History of American cinema from the 1950s to the present; Taken at Diablo Valley College"
+        description: "History of American cinema from the 1950s to the present. Taken at Diablo Valley College"
       }
 
     ]

@@ -17,18 +17,29 @@ function Professional() {
       authors: "Programs Intern",
       bulletPoints: [
         "Built Istanbul Protocol training for Ukrainian clinicians documenting torture and sexual violence (to be launched in Kyiv in May 2025)",
-        "Led internal all-staff briefings on AI/ML models and their applications to human rights and public health work"
+        "Led internal all-staff briefings on AI/ML models and their applications to human rights and public health work",
+        "Conducted and co-authored research on effects of Florida’s six-week abortion policy on practicing clinicians",
       ]
     },
     {
       id: 2,
       title: "Brown University Watson School for International and Public Affairs, Center for Human Rights and Humanitarian Studies",
-      authors: "Teaching Fellow for Professor David Polatty, Humanitarian Research Analyst",
+      authors: "Teaching Fellow, Humanitarian Research Analyst",
       bulletPoints: [
-        "Developed and co-taught IAPA 0310 (Reimagining Human Security), a course on human, national, and international security policy and practice",
+        "Developed and co-taught IAPA 0310 (Reimagining Human Security), a course on human, national, and international security policy and practice with Professor David Polatty",
         "Designed curriculum and course materials",
         "Led weekly discussions and lectured on topics including climate change, migration, and tech policy",
-        "Mentored students in research and writing for the course"
+        "Mentored students in research and writing for the course",
+        "Investigated policies governing armed escorts for humanitarian convoys in 30 countries with active conflict zones",
+      ]
+    },
+    {
+      id: 3,
+      title: "Brown University School of Public Health, Center for Alcohol and Addiction Studies",
+      authors: "Research Assistant",
+      bulletPoints: [
+        "Conducted laboratory assessments with local mother-teen dyads across Rhode Island and Southern Massachusetts, administering semi-structured interviews of participant substance use, computerized behavioral task administration, and teen anthropometrics",
+        "Analyzed data from 80+ dyads using R and SPSS for a longitudinal study on the impact of maternal tobacco use on adolescent development andsubstance use",
       ]
     },
     {
@@ -36,8 +47,9 @@ function Professional() {
       title: "UC Berkeley School of Law, Human Rights Center",
       authors: "Research and Communications Intern",
       bulletPoints: [
-        "Performed analysis of international sexual violence cases citing digital evidence for use in development of Berkeley Protocol",
-        "Conducted the preliminary research for PBS documentary, *Tulsa: The Fire and the Forgotten*"
+        "Conducted systematic analysis of international sexual violence cases citing digital evidence for use in development of the Berkeley Protocol",
+        "Conducted the preliminary research for PBS documentary, Tulsa: The Fire and the Forgotten",
+        "Performed qualitative research through alumni interviewing and article-writing, pioneering the first annual pride newsletter spotlighting alumni work in LGBTQ+ rights"
       ]
     },
     {
@@ -52,7 +64,7 @@ function Professional() {
       id: 4,
       title: "Brown Emergency Medical Services",
       authors: "Ambulance Training Officer, Lead EMT",
-      tag: "❤️ Volunteering ❤️",
+      tag: "❤️ Volunteer ❤️",
       bulletPoints: [
         "Administered life support services and patient care to Providence community during medical emergencies",
         "Led training and certification for all onboarding EMTs and campus first responders",
@@ -64,7 +76,7 @@ function Professional() {
       id: 4,
       title: "Crisis Text Line",
       authors: "Crisis Counselor",
-      tag: "❤️ Volunteering ❤️",
+      tag: "❤️ Volunteer ❤️",
       bulletPoints: [
         "Provide mental health crisis intervention for texters"
       ]
@@ -73,7 +85,7 @@ function Professional() {
       id: 4,
       title: "Sexual Health and Peer Education (SHAPE)",
       authors: "Teacher",
-      tag: "❤️ Volunteering ❤️",
+      tag: "❤️ Volunteer ❤️",
       bulletPoints: [
         "Taught sexual health and reproductive education to high school students in Providence public schools"
       ]
