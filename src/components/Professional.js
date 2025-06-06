@@ -30,7 +30,7 @@ function Professional() {
         "Designed curriculum and course materials",
         "Led weekly discussions and lectured on topics including climate change, migration, and tech policy",
         "Mentored students in research and writing for the course",
-        "Investigated policies governing armed escorts for humanitarian convoys in 30 countries with active conflict zones",
+        "Partnering with UN OCHA, investigated policies governing armed escorts for humanitarian convoys in 30 countries with active conflict zones",
       ]
     },
     {
