@@ -26,7 +26,7 @@ function Professional() {
       title: "Brown University Watson School for International and Public Affairs, Center for Human Rights and Humanitarian Studies",
       authors: "Teaching Fellow, Humanitarian Research Analyst",
       bulletPoints: [
-        "Developed and co-taught IAPA 0310 (Reimagining Human Security), a course on human, national, and international security policy and practice with Professor David Polatty",
+        "With Professor David Polatty, developed and co-taught IAPA 0310 (Reimagining Human Security), a course on human, national, and international security policy and practice",
         "Designed curriculum and course materials",
         "Led weekly discussions and lectured on topics including climate change, migration, and tech policy",
         "Mentored students in research and writing for the course",
@@ -36,7 +36,7 @@ function Professional() {
     {
       id: 3,
       title: "Brown University School of Public Health, Center for Alcohol and Addiction Studies",
-      authors: "Research Assistant",
+      authors: "Research Assistant for Dr. Lauren Micalizzi",
       bulletPoints: [
         "Conducted laboratory assessments with local mother-teen dyads across Rhode Island and Southern Massachusetts, administering semi-structured interviews of participant substance use, computerized behavioral task administration, and teen anthropometrics",
         "Analyzed data from 80+ dyads using R and SPSS for a longitudinal study on the impact of maternal tobacco use on adolescent development and substance use",
