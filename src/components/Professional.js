@@ -39,7 +39,7 @@ function Professional() {
       authors: "Research Assistant",
       bulletPoints: [
         "Conducted laboratory assessments with local mother-teen dyads across Rhode Island and Southern Massachusetts, administering semi-structured interviews of participant substance use, computerized behavioral task administration, and teen anthropometrics",
-        "Analyzed data from 80+ dyads using R and SPSS for a longitudinal study on the impact of maternal tobacco use on adolescent development andsubstance use",
+        "Analyzed data from 80+ dyads using R and SPSS for a longitudinal study on the impact of maternal tobacco use on adolescent development and substance use",
       ]
     },
     {
