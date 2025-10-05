@@ -1,50 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
 
+/* Base Variables */
 :root {
     --primary-blue: #2563EB;
     --light-blue: #3B82F6;
     --dark-blue: #1E3A8A;
     --darker-blue: #1E293B;
     --darkest-blue: #0F172A;
+    
+    /* Font families */
+    --font-sans: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Shared slate colors */
+    --slate-1: #F8FAFC;
+    --slate-2: #F1F5F9;
+    --slate-3: #E2E8F0;
+    --slate-4: #334155;
+    --slate-5: #475569;
+    --slate-6: #64748B;
+    --slate-7: #334155;
+    --slate-8: #1E293B;
+    --slate-9: #0F172A;
+    --slate-10: #020617;
+    
+    /* Blue colors */
+    --blue-4: #1E3A8A;
+    --blue-5: #1E40AF;
+    --blue-9: #2563EB;
+    --blue-11: #3B82F6;
+    --blue-12: #DBEAFE;
+    
+    /* Mint colors */
+    --mint-3: #5EEAD4;
+    --mint-4: #2DD4BF;
+    --mint-5: #14B8A6;
+    --mint-6: #0D9488;
+    --mint-7: #0F766E;
+    --mint-8: #115E59;
+    --mint-9: #134E4A;
+    --mint-10: #134E4A;
+    --mint-11: #134E4A;
+    
+    /* Other variables */
+    --radius-2: 6px;
+    --radius-4: 12px;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
     --text-light: #475569;
     --text-lighter: #F1F5F9;
     --background: #030712;
     --card-bg: #0F172A;
-    
-    /* Font families */
-    --font-sans: 'Playfair Display', Georgia, serif;
-    --font-serif: 'Playfair Display', Georgia, serif;
-    
-    --space-1: var(--space-1);
-    --space-2: var(--space-2);
-    --space-3: var(--space-3);
-    --space-4: var(--space-4);
-    --space-5: var(--space-5);
-
-    /* Custom color overrides - deeper midnight blues */
     --page-bg: #030712;
     --content-bg: #0F172A;
     --header-gradient-start: #020617;
     --header-gradient-end: #0F172A;
-
-    /* Dark theme colors - adjusted for midnight blue */
-    --slate-1: #F8FAFC;
-    --slate-4: #334155;
-    --slate-5: #475569;
-    --slate-6: #64748B;
+    --sidebar-bg: rgba(15, 23, 42, 0.95);
+    --star-color: #ffffff;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: rgba(148, 163, 184, 0.2);
+    
+    /* Dark theme slate colors */
     --slate-11: #CBD5E1;
     --slate-12: #F8FAFC;
+}
+
+/* Light Theme Variables */
+.light-theme {
+    --text-light: #1e293b;
+    --text-lighter: #475569;
+    --background: #fefefe;
+    --card-bg: #ffffff;
+    --page-bg: #fefefe;
+    --content-bg: #ffffff;
+    --header-gradient-start: #f8fafc;
+    --header-gradient-end: #fefefe;
+    --sidebar-bg: rgba(250, 250, 248, 0.95);
+    --star-color: transparent;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: rgba(100, 116, 139, 0.2);
     
-    /* Blue colors for the midnight theme */
-    --blue-4: #1E3A8A;
-    --blue-5: #1E40AF;
-    --blue-9: #2563EB;
-    --blue-11: #60A5FA;
-    --blue-12: #DBEAFE;
+    /* Light theme slate colors */
+    --slate-11: #1E293B;
+    --slate-12: #0F172A;
     
-    /* Other variables stay the same */
-    --radius-2: 6px;
-    --radius-4: 12px;
+    /* Override specific light theme colors */
+    --slate-1: #0F172A;
+    --slate-2: #1E293B;
+    --slate-3: #334155;
+    
+    /* Light theme hot pink overrides for blue colors */
+    --blue-4: #9D174D;
+    --blue-5: #BE185D;
+    --blue-9: #DB2777;
+    --blue-11: #EC4899;
+    --blue-12: #FCE7F3;
 }
 
 * {
@@ -56,11 +112,11 @@ input,
 button, 
 textarea, 
 select {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
     line-height: 1.8;
     margin: 0;
@@ -126,11 +182,17 @@ html {
     position: fixed;
     left: 0;
     top: 0;
-    width: 280px;
+    width: 240px;
     height: 100vh;
     background: linear-gradient(180deg, var(--header-gradient-start), var(--header-gradient-end));
     z-index: 100;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.light-theme .sidebar {
+    background: var(--sidebar-bg);
 }
 
 .sidebar-content {
@@ -138,6 +200,7 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .sidebar-header {
@@ -201,10 +264,125 @@ html {
     border-radius: 0 2px 2px 0;
 }
 
+.light-theme .nav-item.active::before {
+    background: var(--blue-9) !important;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle-container {
+    margin-top: auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.theme-toggle-button {
+    background: var(--content-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: var(--blue-11);
+}
+
+.theme-toggle-icon {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* ====================================
+   LIGHT THEME SPECIFIC OVERRIDES
+   ==================================== */
+/* All headings and titles should be dark in light mode */
+.light-theme .sidebar-header h1,
+.light-theme .section-title,
+.light-theme .hero-title,
+.light-theme .degree-card h3,
+.light-theme .publication-item h2,
+.light-theme .professional-item h2,
+.light-theme .project-card h3,
+.light-theme .modal-header h2,
+.light-theme .project-header h2,
+.light-theme .research-header h2,
+.light-theme .concentration-overview h3,
+.light-theme .degree-card .card-title,
+.light-theme .coursework-header h3 {
+    color: #0F172A !important;
+}
+
+/* Navigation items */
+.light-theme .nav-item {
+    color: #334155 !important;
+}
+
+.light-theme .nav-item:hover {
+    color: #0F172A !important;
+}
+
+.light-theme .nav-item.active {
+    color: var(--blue-9) !important;
+    background: rgba(219, 39, 119, 0.2) !important;
+}
+
+/* Light theme hover effects should use pink */
+.light-theme .coursework-section:hover,
+.light-theme .degree-card[data-is-mph="true"]:hover,
+.light-theme .publication-item[data-is-completed-research="true"]:hover {
+    border-color: var(--blue-9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.2) !important;
+    background: rgba(219, 39, 119, 0.05) !important;
+}
+
+.light-theme .theme-toggle-button:hover {
+    border-color: var(--blue-11);
+    box-shadow: 0 4px 12px rgba(219, 39, 119, 0.15);
+}
+
+/* Pink tags and buttons should have white text */
+.light-theme .tech-tag,
+.light-theme .award-tag,
+.light-theme .course-code,
+.light-theme .volunteer-tag,
+.light-theme .research-modal .modal-content .view-details:hover,
+.light-theme .github-link,
+.light-theme .github-link:hover {
+    color: #ffffff !important;
+}
+
+/* Apparel collection names should remain white in light mode */
+.light-theme .collection-overlay h3,
+.light-theme .collection-overlay p {
+    color: #ffffff !important;
+}
+
+/* Coursework dropdown borders should match degree cards in light mode */
+.light-theme .coursework-section {
+    border: 1px solid var(--slate-6) !important;
+}
+
+.light-theme .coursework-header h3 {
+    color: #0F172A !important;
+}
+
+
 /* Main Content */
 .main-content {
-    margin-left: 280px;
-    width: calc(100% - 280px);
+    margin-left: 240px;
+    width: calc(100% - 240px);
     min-height: 100vh;
     background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
     position: relative;
@@ -224,6 +402,10 @@ html {
     overflow: hidden;
 }
 
+.light-theme .hero-section {
+    background: var(--background);
+}
+
 /* Star animation for entire website */
 .main-content::before {
     content: '';
@@ -233,20 +415,20 @@ html {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(2px 2px at 20% 10%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 40% 20%, rgba(255, 255, 255, 0.8), rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 60% 15%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 80% 25%, rgba(255, 255, 255, 0.7), rgba(0,0,0,0)),
-        radial-gradient(2.5px 2.5px at 10% 35%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 30% 45%, rgba(255, 255, 255, 0.8), rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50% 55%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 70% 65%, rgba(255, 255, 255, 0.7), rgba(0,0,0,0)),
-        radial-gradient(2.5px 2.5px at 90% 75%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 15% 85%, rgba(255, 255, 255, 0.8), rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 35% 95%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 55% 5%, rgba(255, 255, 255, 0.7), rgba(0,0,0,0)),
-        radial-gradient(2.5px 2.5px at 75% 40%, rgba(255, 255, 255, 0.9), rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 95% 60%, rgba(255, 255, 255, 0.8), rgba(0,0,0,0));
+        radial-gradient(2px 2px at 20% 10%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 40% 20%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 60% 15%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 80% 25%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 10% 35%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 30% 45%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50% 55%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 70% 65%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 90% 75%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 15% 85%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 35% 95%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 55% 5%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 75% 40%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 95% 60%, var(--star-color), rgba(0,0,0,0));
     background-size: 100% 100%;
     background-repeat: repeat;
     opacity: 0;
@@ -263,36 +445,36 @@ html {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(1px 1px at 12% 8%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 22% 18%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 32% 28%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 42% 38%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 52% 48%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 62% 58%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 72% 68%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 82% 78%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 92% 88%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 2% 98%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 8% 12%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 18% 22%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 28% 32%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 38% 42%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 48% 52%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 58% 62%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 68% 72%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 78% 82%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 88% 92%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 98% 2%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 5% 25%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 15% 35%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 25% 45%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 35% 55%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 45% 65%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 55% 75%, white, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 65% 85%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 75% 95%, white, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 85% 5%, white, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 95% 15%, white, rgba(0,0,0,0));
+        radial-gradient(1px 1px at 12% 8%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 22% 18%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 32% 28%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 42% 38%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 52% 48%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 62% 58%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 72% 68%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 82% 78%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 92% 88%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 2% 98%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 8% 12%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 18% 22%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 28% 32%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 38% 42%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 48% 52%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 58% 62%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 68% 72%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 78% 82%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 88% 92%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 98% 2%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 5% 25%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 15% 35%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 25% 45%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 35% 55%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 45% 65%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 55% 75%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 65% 85%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 75% 95%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 85% 5%, var(--star-color), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 95% 15%, var(--star-color), rgba(0,0,0,0));
     background-size: 100% 100%;
     background-repeat: repeat;
     opacity: 0;
@@ -396,7 +578,7 @@ header h1 {
 
 
 .hero-subtitle {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 1.6rem;
     color: var(--blue-11);
     margin: 1.5rem 0 0 0;
@@ -460,9 +642,9 @@ header h1 {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--slate-11);
-    text-align: center;
+    text-align: left;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
 }
 
 .about-image {
@@ -582,7 +764,7 @@ header h1 {
     padding: 2rem;
     margin-bottom: 2rem;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--slate-7);
 }
 
 .publication-item:hover {
@@ -971,6 +1153,10 @@ header h1 {
     transition: all 0.3s ease;
 }
 
+.light-theme .artist-statement {
+    border: 1px solid var(--blue-9);
+}
+
 .artist-statement:hover {
     border-color: var(--blue-9);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
@@ -1106,12 +1292,16 @@ header h1 {
     border-radius: var(--radius-4);
     padding: 0;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--slate-7);
     cursor: pointer;
     height: 400px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+.light-theme .project-card {
+    border: 0.5px solid var(--slate-7);
 }
 
 .website-card-container {
@@ -1132,6 +1322,11 @@ header h1 {
     border-color: var(--blue-9);
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.light-theme .project-card:hover {
+    border-color: var(--blue-9);
+    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.3);
 }
 
 .project-image {
@@ -1190,7 +1385,7 @@ header h1 {
 }
 
 .visit-link {
-    color: var(--mint-9);
+    color: var(--mint-6);
     font-size: 0.9rem;
     font-weight: 500;
     text-decoration: none;
@@ -1232,7 +1427,7 @@ header h1 {
 }
 
 .project-modal {
-    background: var(--content-bg);
+    background: transparent;
     border-radius: var(--radius-4);
     width: 100%;
     max-width: 900px;
@@ -1326,6 +1521,29 @@ header h1 {
     color: var(--slate-11);
     line-height: 1.6;
     margin-bottom: 1.5rem;
+}
+
+.project-prose {
+    margin-bottom: 1.5rem;
+    color: var(--slate-11);
+    line-height: 1.7;
+    font-size: 1rem;
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.equation-box {
+    background: var(--content-bg);
+    border: 1px solid var(--slate-7);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--slate-11);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .technologies {
@@ -1829,7 +2047,7 @@ header h1 {
     .sidebar {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
-        width: 280px;
+        width: 240px;
     }
     
     .sidebar.open {
@@ -2106,7 +2324,7 @@ header h1 {
     border-radius: var(--radius-4);
     padding: 2rem;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--slate-7);
     position: relative;
 }
 
@@ -2167,6 +2385,16 @@ header h1 {
 }
 
 /* Research modal content styling */
+.project-modal .modal-content {
+    background: var(--content-bg);
+    border: 1px solid var(--slate-6);
+    border-radius: 12px;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
 .research-modal .modal-content {
     background: var(--content-bg);
     border: 1px solid var(--slate-6);
@@ -2244,6 +2472,17 @@ header h1 {
     color: var(--slate-12);
 }
 
+/* Concentration modal header styling */
+.concentration-overview h4 {
+    color: var(--blue-9);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--blue-9);
+    display: inline-block;
+}
+
 /* Responsive modal */
 @media (max-width: 768px) {
     .modal-content {
@@ -2275,7 +2514,7 @@ header h1 {
     line-height: 1.6;
     margin: 0.5rem 0;
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .institution {
@@ -2293,7 +2532,7 @@ header h1 {
 
 .coursework-section {
     margin-bottom: 2rem;
-    border: 1px solid transparent;
+    border: 1px solid var(--slate-7);
     border-radius: var(--radius-4);
     background: var(--content-bg);
     overflow: hidden;
@@ -2301,7 +2540,14 @@ header h1 {
 }
 
 .coursework-section:hover {
-    border-color: var(--blue-9);
+    border-color: var(--blue-11);
+}
+
+.light-theme .coursework-section:hover {
+    border-color: #DB2777 !important;
+    background: rgba(221, 77, 142, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(219, 39, 119, 0.2);
 }
 
 .coursework-header {
@@ -2316,6 +2562,10 @@ header h1 {
 
 .coursework-header:hover {
     background: rgba(59, 130, 246, 0.1);
+}
+
+.light-theme .coursework-header:hover {
+    background: rgba(219, 39, 119, 0.1);
 }
 
 .coursework-header h3 {
@@ -2582,11 +2832,15 @@ a:hover {
 }
 
 .header-button:hover {
-    background: var(--slate-6);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     border-color: var(--blue-11);
-    color: var(--blue-11);
-    transform: translateY(-1px);
     text-decoration: none;
+}
+
+.light-theme .header-button:hover {
+    border-color: var(--blue-11);
+    box-shadow: 0 4px 12px rgba(219, 39, 119, 0.15);
 }
 
 .header-button svg {

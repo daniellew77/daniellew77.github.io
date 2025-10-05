@@ -22,12 +22,11 @@ import gnbArchitecture from '../assets/images/gnb_architecture.png';
 import gnbMatrix from '../assets/images/gnb_confusion_matrix.png';
 import gnbRoc from '../assets/images/gnb_roc_curve.png';
 import gnbFeatures from '../assets/images/gnb_feature_importance.png';
-// Music Genre Classifier images
+
 import musicArchitecture from '../assets/images/music_architecture.jpg';
 import musicSpectrogramsPop from '../assets/images/music_spectrograms_pop.jpg';
 import musicSpectrogramsRock from '../assets/images/music_spectrograms_rock.jpg';
 // import musicLime from '../assets/images/music_lime_explanations.png';
-// Peerakeet images
 import peerakeetHome from '../assets/images/peerakeet_home.jpeg';
 import peerakeetLanding from '../assets/images/peerakeet_home.jpeg';
 import peerakeetHowFeels from '../assets/images/how_p_feels.jpg';
@@ -40,8 +39,8 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Peerakeet",
-      description: "CPO of digital peer-to-peer support startup creating safe, stigma-free spaces for students and young adults in addiction recovery.",
+      title: "Peerakeet Website",
+      description: "CPO and Founding Engineer of digital peer-to-peer support startup creating safe, stigma-free spaces for students and young adults in addiction recovery.",
       website: "https://www.peerakeet.com/",
       media: [
         { type: 'image', src: peerakeetLanding },
@@ -49,16 +48,9 @@ function Projects() {
         { type: 'image', src: peerakeetWhyWorks },
         { type: 'image', src: peerakeetPilot }
       ],
-      bulletPoints: [
-        "Leading product strategy for anonymous peer support platform serving Gen Z students",
-        "Built on evidence-based therapeutic techniques like Motivational Interviewing and CBT",
-        "AI-moderated conversations with real-time crisis detection in under 10 milliseconds",
-        "FERPA & HIPAA aligned privacy protections with anonymous analytics for institutions",
-        "24/7 continuous support network preventing relapse patterns after acute treatment ends",
-        "Peer support reduces relapse rates by 30-50% and generates significant cost savings per person"
-      ],
+      proseDescription: "As CPO and Founding Engineer, I lead product strategy for an anonymous peer support addiction recovery platform that creates safe, stigma-free spaces for students and young adults.\n\nI develop the website (accessible at the link below) using React Native. The mobile app (available for piloting) is built with React Native. With Peerkeet, we are building on evidence-based therapeutic techniques like Motivational Interviewing and CBT. The platform leverages AI moderation with real-time crisis detection in under 10 milliseconds, FERPA & HIPAA aligned privacy protections with anonymous analytics for institutions, and a 24/7 continuous support network that prevents relapse patterns after acute treatment ends.",
       technologies: [
-        "Product Strategy", "Behavioral Science", "Mental Health Tech", "Privacy & Compliance", "Startup Leadership"
+        "Full Stack Development", "Product Strategy", "Behavioral Science", "Mental Health Tech", "Startup Leadership"
       ]
     },
     {
@@ -74,13 +66,7 @@ function Projects() {
         { type: 'image', src: illuminate4 },
         { type: 'video', src: illuminate5 }
       ],
-      bulletPoints: [
-        "Utilized LangChain to convert user prompts into lesson plans, scripts, and animation",
-        "Generated interactive quizzes to test user comprehension",
-        "Built frontend interface using React, including landing page, personalized settings, and quiz components",
-        "Implemented AWS (EC2, S3, ApiGateway, Lambda) for scalable deployment",
-        "Integrated with FastAPI backend for efficient prompt processing and video generation"
-      ],
+      proseDescription: "During Hack@Brown, my team and I developed an LLM-powered educational video generator that creates animated explanations for any topic, inspired by 3Blue1Brown's videos. The system utilizes LangChain to convert user prompts into comprehensive lesson plans, scripts, and animation sequences.\n\nI built the frontend interface using React, including a landing page, personalized settings, and interactive quiz components to test user comprehension. I also implemented the LangChain pipeline for the backend, creating custom nodes to process user prompts and orchestrate the video generation workflow, with FastAPI handling API requests and AWS infrastructure (EC2, S3, ApiGateway, Lambda) providing scalable deployment.",
       technologies: [
         "Python", "React", "AWS", "LangChain", "FastAPI", "Manim", "LLMs"
       ]
@@ -95,14 +81,7 @@ function Projects() {
         { type: 'image', src: musicSpectrogramsPop },
         { type: 'image', src: musicSpectrogramsRock }
       ],
-      bulletPoints: [
-        "Developed hybrid architecture combining 2D CNN for spectrogram analysis with MLP for feature data processing",
-        "Implemented audio preprocessing pipeline using librosa to convert 30-second audio files into spectrograms",
-        "Applied data augmentation techniques to enhance frequency differences for better pattern recognition", 
-        "Trained on Free Music Archive (FMA) dataset with 8,000 songs across 8 genres including rock, pop, electronic, and classical",
-        "Generated LIME explanations for model interpretability to understand which spectral regions influence genre predictions",
-        "Achieved superior performance (51% accuracy) compared to CNN-only approach by incorporating both spectral and tabular features"
-      ],
+      proseDescription: "I developed a hybrid deep learning model that combines 2D CNN and MLP architectures to classify music genres from spectrograms and audio features.\n\nAudio files are first converted in spectrograms using librosa, and are then used to train the model. The system uses a 2D CNNs for spectrogram analysis with MLP for feature data processing. I applied data augmentation techniques to enhance frequency differences for better pattern recognition and trained the model on the Free Music Archive (FMA) dataset with 8,000 songs across 8 genres including rock, pop, electronic, and classical. The model generates LIME explanations for interpretability to understand which spectral regions influence genre predictions, achieving superior performance (51% accuracy) compared to CNN-only approaches by incorporating both spectral and tabular features.",
       technologies: [
         "Python", "TensorFlow", "CNN", "MLP", "Librosa", "NumPy", "LIME", "Audio Processing", "Deep Learning"
       ]
@@ -122,12 +101,7 @@ function Projects() {
         { type: 'image', src: honeyGif },
         { type: 'image', src: honeyReal }
       ],
-      bulletPoints: [
-        "Implemented the Cahn-Hilliard partial differential equation: ∂φ/∂t = M ∇² (φ³ - φ - ε² ∇²φ)",
-        "Simulated pattern formation for zebras, giraffes, leopards, and honeycomb over time using Python and numerical methods",
-        "Created side-by-side comparisons of simulated patterns with real animal prints",
-        "Demonstrated how biological patterns emerge from simple mathematical principles"
-      ],
+      proseDescription: "I implemented a mathematical simulation of pattern formation in nature using the Cahn-Hilliard equation, demonstrating how complex animal prints emerge from simple mathematical principles. The project involved implementing the Cahn-Hilliard partial differential equation, which governs phase separation in binary mixtures:\n\n<div class='equation-box'>∂φ/∂t = M ∇² (φ³ - φ - ε² ∇²φ)</div>\n\n I then simulated pattern formation for zebras, giraffes, leopards, and honeycomb over time using Python and numerical methods. I created side-by-side comparisons of the simulated patterns with real animal prints.",
       technologies: [
         "Python", "NumPy", "SciPy", "Matplotlib", "PDEs", "Scientific Computing"
       ]
@@ -143,13 +117,7 @@ function Projects() {
         { type: 'image', src: gnbRoc },
         { type: 'image', src: gnbFeatures }
       ],
-      bulletPoints: [
-        "Implemented complete Gaussian Naive Bayes algorithm from ground up using only NumPy",
-        "Developed custom feature scaling and probability calculation functions",
-        "Achieved 85% accuracy on heart disease prediction using UCI Heart Disease Dataset, matching scikit-learn's performance",
-        "Created visualization suite for model diagnostics and feature analysis",
-        "Applied Gaussian probability distributions to handle continuous medical data"
-      ],
+      proseDescription: "I built a Gaussian Naive Bayes classifier from scratch for coronary heart disease diagnosis, implementing the complete algorithm using only NumPy without relying on existing ML libraries.\n\nThe project involved developing custom feature scaling and probability calculation functions, applying Gaussian probability distributions to handle continuous medical data, and achieving 85% accuracy on heart disease prediction using the UCI Heart Disease Dataset. This matched scikit-learn's performance on the same dataset! \n\n I created a comprehensive visualization suite for model diagnostics and feature analysis, demonstrating the algorithm's effectiveness in medical diagnosis applications.",
       technologies: [
         "Machine Learning", "Naive Bayes", "Python", "NumPy", "Pandas", "Matplotlib", "Medical ML"
       ]
@@ -158,7 +126,7 @@ function Projects() {
       id: 6,
       title: "This website!",
       description: "Built with Javascript and React",
-      isWebsiteCard: true // Special flag to identify this card
+      isWebsiteCard: true 
     }
   ];
 
@@ -294,37 +262,30 @@ function Projects() {
                 <h2>{selectedProject.title}</h2>
               </div>
               
-              <p className="project-description">{selectedProject.description}</p>
-              
               {selectedProject.award && (
                 <Text as="p" className="award-tag">
                   {selectedProject.award}
                 </Text>
               )}
 
-               {selectedProject.media && selectedProject.media.length > 0 && (
-                 <div className="project-slideshow">
-                   <Slider {...sliderSettings}>
-                     {selectedProject.media.map((item, index) => renderMediaItem(item, index))}
-                   </Slider>
-                 </div>
-               )}
+              {selectedProject.proseDescription && (
+                <div className="project-prose">
+                  {selectedProject.proseDescription.split('\n').map((line, index) => {
+                    if (line.includes('equation-box')) {
+                      return <div key={index} dangerouslySetInnerHTML={{ __html: line }} />;
+                    }
+                    return <p key={index}>{line}</p>;
+                  })}
+                </div>
+              )}
 
-               {selectedProject.bulletPoints && selectedProject.bulletPoints.length > 0 && (
-                 <ul className="bullet-points">
-                   {selectedProject.bulletPoints.map((point, index) => (
-                     <li key={index}>{point}</li>
-                   ))}
-                 </ul>
-               )}
-
-               {selectedProject.technologies && selectedProject.technologies.length > 0 && (
-                 <div className="technologies">
-                   {selectedProject.technologies.map((tech, index) => (
-                     <span key={index} className="tech-tag">{tech}</span>
-                   ))}
-                 </div>
-               )}
+              {selectedProject.technologies && selectedProject.technologies.length > 0 && (
+                <div className="technologies">
+                  {selectedProject.technologies.map((tech, index) => (
+                    <span key={index} className="tech-tag">{tech}</span>
+                  ))}
+                </div>
+              )}
 
               <div className="project-links">
                 {selectedProject.devpost && (
@@ -358,6 +319,14 @@ function Projects() {
                   </a>
                 )}
               </div>
+
+               {selectedProject.media && selectedProject.media.length > 0 && (
+                 <div className="project-slideshow">
+                   <Slider {...sliderSettings}>
+                     {selectedProject.media.map((item, index) => renderMediaItem(item, index))}
+                   </Slider>
+                 </div>
+               )}
             </div>
           </div>
         </div>

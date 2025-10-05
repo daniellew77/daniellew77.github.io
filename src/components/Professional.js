@@ -97,7 +97,7 @@ function Professional() {
   ];
 
   const formatBulletPoint = (text) => {
-    // Handle italics formatting
+    // Handle italics 
     return text.split('*').map((part, index) => 
       index % 2 === 1 ? <em key={index}>{part}</em> : part
     );

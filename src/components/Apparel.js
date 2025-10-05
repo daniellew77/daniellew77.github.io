@@ -54,7 +54,7 @@ function Apparel() {
       id: 0,
       name: "Lullabies: SS 2025",
       coverImage: stellayay,
-      description: "Lullabies uses midnight blues and celestial motifs across billowing silhouettes that mimic breathing during sleep, cradling the body in nocturnal serenity.",
+      description: "Lullabies uses midnight blues and celestial motifs across billowing silhouettes that mimic breathing during sleep. It is a dreamy stylistic exploration that captures the tranquility of sleep.",
       models: ["Mar Falcon", "Stella Biase", "Ishya Washington", "Tiffany Zhang", "Skeeter Sunda", "Aliza Kopans", "Alaina Lin", "Me!"],
       images: [
         { id: 0, imageUrl: stellayay },

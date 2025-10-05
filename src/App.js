@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { Theme } from '@radix-ui/themes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import Header from './components/Header';
 import About from './components/About';
 import Academics from './components/Academics';
@@ -13,8 +15,23 @@ import './styles.css';
 
 function AppContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check localStorage first, default to dark mode
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme === 'dark' : true;
+  });
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Update document class and localStorage when theme changes
+  useEffect(() => {
+    document.documentElement.className = isDarkMode ? 'dark-theme' : 'light-theme';
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   const getActiveTab = () => {
     const path = location.pathname.slice(1); // Remove leading slash
@@ -28,7 +45,7 @@ function AppContent() {
 
   return (
     <Theme
-      appearance="dark"
+      appearance={isDarkMode ? "dark" : "light"}
       accentColor="blue"
       grayColor="slate"
       radius="medium"
@@ -109,6 +126,20 @@ function AppContent() {
                 </button>
               </li>
             </ul>
+            
+            {/* Theme Toggle Button */}
+            <div className="theme-toggle-container">
+              <button 
+                className="theme-toggle-button"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+              >
+                <FontAwesomeIcon 
+                  icon={isDarkMode ? faSun : faMoon} 
+                  className="theme-toggle-icon"
+                />
+              </button>
+            </div>
           </div>
         </nav>
 
