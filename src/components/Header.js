@@ -91,8 +91,9 @@ function Header() {
         </p>
         <div className="header-buttons">
           <a 
-            href="/Danielle CV.pdf" 
-            download="Danielle_Whisnant_CV.pdf"
+            href="https://drive.google.com/file/d/1WO_JGUfwGGHrZ03yBgUN5SmfCJmKuOTn/view?usp=sharing" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="header-button cv-button"
           >
             <FontAwesomeIcon icon={faDownload} />
