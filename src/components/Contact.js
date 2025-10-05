@@ -23,7 +23,6 @@ function Contact() {
     setStatus('sending');
 
     try {
-      // Replace with your actual Formspree form ID
       const response = await fetch('https://formspree.io/f/xzzgzwwb', {
         method: 'POST',
         body: new FormData(e.target),

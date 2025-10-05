@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { Theme } from '@radix-ui/themes';
 import Header from './components/Header';
 import About from './components/About';
@@ -7,39 +8,23 @@ import Publications from './components/Publications';
 import Professional from './components/Professional';
 import Projects from './components/Projects';
 import Apparel from './components/Apparel';
-import Contact from './components/Contact';
 import '@radix-ui/themes/styles.css';
 import './styles.css';
 
-function App() {
-  const [activeSection, setActiveSection] = useState('home');
+function AppContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false); // Close mobile menu after navigation
-    }
+  const getActiveTab = () => {
+    const path = location.pathname.slice(1); // Remove leading slash
+    return path || 'home';
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'academics', 'publications', 'professional', 'projects', 'apparel', 'contact'];
-      const scrollPosition = window.scrollY + 100;
-      
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const switchTab = (tabName) => {
+    navigate(`/${tabName === 'home' ? '' : tabName}`);
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
 
   return (
     <Theme
@@ -66,72 +51,61 @@ function App() {
         <nav className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-content">
             <div className="sidebar-header">
-              <h1>Danielle Whisnant</h1>
+              <h1 
+                onClick={() => switchTab('home')}
+                style={{ cursor: 'pointer' }}
+              >
+                Danielle Whisnant
+              </h1>
             </div>
             
             <ul className="nav-menu">
               <li>
                 <button 
-                  className={`nav-item ${activeSection === 'home' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('home')}
+                  className={`nav-item ${getActiveTab() === 'home' ? 'active' : ''}`}
+                  onClick={() => switchTab('home')}
                 >
                   Home
                 </button>
               </li>
               <li>
                 <button 
-                  className={`nav-item ${activeSection === 'about' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('about')}
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`nav-item ${activeSection === 'academics' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('academics')}
+                  className={`nav-item ${getActiveTab() === 'academics' ? 'active' : ''}`}
+                  onClick={() => switchTab('academics')}
                 >
                   Academics
                 </button>
               </li>
               <li>
                 <button 
-                  className={`nav-item ${activeSection === 'publications' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('publications')}
+                  className={`nav-item ${getActiveTab() === 'research' ? 'active' : ''}`}
+                  onClick={() => switchTab('research')}
                 >
                   Research
                 </button>
               </li>
               <li>
                 <button 
-                  className={`nav-item ${activeSection === 'professional' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('professional')}
+                  className={`nav-item ${getActiveTab() === 'professional' ? 'active' : ''}`}
+                  onClick={() => switchTab('professional')}
                 >
                   Professional
                 </button>
               </li>
               <li>
                 <button 
-                  className={`nav-item ${activeSection === 'projects' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('projects')}
+                  className={`nav-item ${getActiveTab() === 'projects' ? 'active' : ''}`}
+                  onClick={() => switchTab('projects')}
                 >
                   Projects
                 </button>
               </li>
               <li>
                 <button 
-                  className={`nav-item ${activeSection === 'apparel' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('apparel')}
+                  className={`nav-item ${getActiveTab() === 'apparel' ? 'active' : ''}`}
+                  onClick={() => switchTab('apparel')}
                 >
                   Apparel
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`nav-item ${activeSection === 'contact' ? 'active' : ''}`}
-                  onClick={() => scrollToSection('contact')}
-                >
-                  Contact
                 </button>
               </li>
             </ul>
@@ -148,40 +122,65 @@ function App() {
 
         {/* Main Content Area */}
         <main className="main-content">
-          <section id="home" className="section hero-section">
-            <Header />
-          </section>
-
-          <section id="about" className="section">
-            <About />
-          </section>
-
-          <section id="academics" className="section">
-            <Academics />
-          </section>
-
-          <section id="publications" className="section">
-            <Publications />
-          </section>
-
-          <section id="professional" className="section">
-            <Professional />
-          </section>
-
-          <section id="projects" className="section">
-            <Projects />
-          </section>
-
-          <section id="apparel" className="section">
-            <Apparel />
-          </section>
-
-          <section id="contact" className="section">
-            <Contact />
-          </section>
+          <Routes>
+            <Route path="/" element={
+              <div className="tab-content">
+              <section className="section hero-section">
+                <Header />
+              </section>
+              <section className="section">
+                <About />
+              </section>
+              </div>
+            } />
+            <Route path="/academics" element={
+              <div className="tab-content">
+                <section className="section">
+                  <Academics />
+                </section>
+              </div>
+            } />
+            <Route path="/research" element={
+              <div className="tab-content">
+                <section className="section">
+                  <Publications />
+                </section>
+              </div>
+            } />
+            <Route path="/professional" element={
+              <div className="tab-content">
+                <section className="section">
+                  <Professional />
+                </section>
+              </div>
+            } />
+            <Route path="/projects" element={
+              <div className="tab-content">
+                <section className="section">
+                  <Projects />
+                </section>
+              </div>
+            } />
+            <Route path="/apparel" element={
+              <div className="tab-content">
+                <section className="section">
+                  <Apparel />
+                </section>
+              </div>
+            } />
+            <Route path="/me" element={<Navigate to="/" replace />} />
+          </Routes>
         </main>
       </div>
     </Theme>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

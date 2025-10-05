@@ -27,6 +27,12 @@ import musicArchitecture from '../assets/images/music_architecture.jpg';
 import musicSpectrogramsPop from '../assets/images/music_spectrograms_pop.jpg';
 import musicSpectrogramsRock from '../assets/images/music_spectrograms_rock.jpg';
 // import musicLime from '../assets/images/music_lime_explanations.png';
+// Peerakeet images
+import peerakeetHome from '../assets/images/peerakeet_home.jpeg';
+import peerakeetLanding from '../assets/images/peerakeet_home.jpeg';
+import peerakeetHowFeels from '../assets/images/how_p_feels.jpg';
+import peerakeetWhyWorks from '../assets/images/why_p_works.jpg';
+import peerakeetPilot from '../assets/images/pilot_page.jpg';
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -34,8 +40,31 @@ function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Peerakeet",
+      description: "CPO of digital peer-to-peer support startup creating safe, stigma-free spaces for students and young adults in addiction recovery.",
+      website: "https://www.peerakeet.com/",
+      media: [
+        { type: 'image', src: peerakeetLanding },
+        { type: 'image', src: peerakeetHowFeels },
+        { type: 'image', src: peerakeetWhyWorks },
+        { type: 'image', src: peerakeetPilot }
+      ],
+      bulletPoints: [
+        "Leading product strategy for anonymous peer support platform serving Gen Z students",
+        "Built on evidence-based therapeutic techniques like Motivational Interviewing and CBT",
+        "AI-moderated conversations with real-time crisis detection in under 10 milliseconds",
+        "FERPA & HIPAA aligned privacy protections with anonymous analytics for institutions",
+        "24/7 continuous support network preventing relapse patterns after acute treatment ends",
+        "Peer support reduces relapse rates by 30-50% and generates significant cost savings per person"
+      ],
+      technologies: [
+        "Product Strategy", "Behavioral Science", "Mental Health Tech", "Privacy & Compliance", "Startup Leadership"
+      ]
+    },
+    {
+      id: 2,
       title: "Illuminate",
-      description: "An LLM-powered educational video generator that creates animated explanations for any topic. Inspired by 3Blue1Brown's videos. Built with LangChain, AWS, and React.",
+      description: "An LLM-powered educational video generator that creates animated explanations for any topic. Inspired by 3Blue1Brown's videos.",
       award: "👑 Best Use of Generative AI - Hack@Brown 2025 👑",
       devpost: "https://devpost.com/software/illuminated-qf09ik",
       media: [
@@ -57,7 +86,7 @@ function Projects() {
       ]
     },
     {
-      id: 2,
+      id: 3,
       title: "Music Genre Classifier",
       description: "A hybrid deep learning model combining 2D CNN and MLP architectures to classify music genres from spectrograms and audio features.",
       github: "https://github.com/Domingo-v/beatbox-1470",
@@ -79,9 +108,9 @@ function Projects() {
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: "Cahn-Hilliard Animal Prints",
-      description: "A mathematical simulation of pattern formation in nature using the Cahn-Hilliard equation, demonstrating how complex animal prints emerge from simple phase separation principles.",
+      description: "A mathematical simulation of pattern formation in nature using the Cahn-Hilliard equation, demonstrating how complex animal prints emerge.",
       github: "https://github.com/daniellew77/CahnHilliardAnimals",
       media: [
         { type: 'image', src: zebraGif },
@@ -104,7 +133,7 @@ function Projects() {
       ]
     },
     {
-      id: 4,
+      id: 5,
       title: "Gaussian Naive Bayes Classifier",
       description: "A Gaussian Naive Bayes classifier built from scratch for coronary heart disease diagnosis. Built without using existing ML libraries.",
       github: "https://github.com/daniellew77/GNBforCoronaryHeartDisease/blob/main/src/gaussiannaivebayes.ipynb",
@@ -126,9 +155,9 @@ function Projects() {
       ]
     },
     {
-      id: 5,
+      id: 6,
       title: "This website!",
-      description: "Built with Javascript, React, and Formspree",
+      description: "Built with Javascript and React",
       isWebsiteCard: true // Special flag to identify this card
     }
   ];
@@ -183,23 +212,74 @@ function Projects() {
       
       {/* Project Cards Grid */}
       <div className="projects-grid">
-        {projects.map(project => (
+        {projects && projects.filter(project => !project.isWebsiteCard).map(project => (
           <div 
             key={project.id} 
-            className={`project-card ${project.isWebsiteCard ? 'website-card' : ''}`}
-            onClick={project.isWebsiteCard ? undefined : () => openProjectModal(project)}
-            style={project.isWebsiteCard ? { cursor: 'default' } : {}}
+            className="project-card"
+            onClick={() => openProjectModal(project)}
           >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            {!project.isWebsiteCard && (
-              <div className="card-footer">
-                <span className="view-details">More →</span>
+            {project.id === 1 && (
+              <div className="project-image">
+                <img src={peerakeetHome} alt="Peerakeet platform" />
               </div>
             )}
+            {project.id === 2 && (
+              <div className="project-image">
+                <img src={illuminate3} alt="Illuminate video interface" />
+              </div>
+            )}
+            {project.id === 3 && (
+              <div className="project-image">
+                <img src={musicArchitecture} alt="Music Genre Classifier Architecture" />
+              </div>
+            )}
+            {project.id === 4 && (
+              <div className="project-image">
+                <img src={leopardGif} alt="Leopard pattern simulation" />
+              </div>
+            )}
+            {project.id === 5 && (
+              <div className="project-image">
+                <img src={gnbRoc} alt="GNB ROC Curve" />
+              </div>
+            )}
+            <div className="project-card-content">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div className="card-footer">
+                <div className="card-footer-left">
+                  {project.website && (
+                    <a href={project.website} target="_blank" rel="noopener noreferrer" className="visit-link">
+                      Visit →
+                    </a>
+                  )}
+                </div>
+                <div className="card-footer-right">
+                  <span className="view-details">More →</span>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
+
+      {/* Website Card - Separate at bottom */}
+      {projects && projects.find(project => project.isWebsiteCard) && (
+        <div className="website-card-container">
+          {projects.filter(project => project.isWebsiteCard).map(project => (
+            <div 
+              key={project.id} 
+              className="project-card website-card"
+              style={{ cursor: 'default' }}
+            >
+              <div className="project-card-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Project Detail Modal */}
       {selectedProject && (
@@ -222,23 +302,29 @@ function Projects() {
                 </Text>
               )}
 
-              <div className="project-slideshow">
-                <Slider {...sliderSettings}>
-                  {selectedProject.media.map((item, index) => renderMediaItem(item, index))}
-                </Slider>
-              </div>
+               {selectedProject.media && selectedProject.media.length > 0 && (
+                 <div className="project-slideshow">
+                   <Slider {...sliderSettings}>
+                     {selectedProject.media.map((item, index) => renderMediaItem(item, index))}
+                   </Slider>
+                 </div>
+               )}
 
-              <ul className="bullet-points">
-                {selectedProject.bulletPoints.map((point, index) => (
-                  <li key={index}>{point}</li>
-                ))}
-              </ul>
+               {selectedProject.bulletPoints && selectedProject.bulletPoints.length > 0 && (
+                 <ul className="bullet-points">
+                   {selectedProject.bulletPoints.map((point, index) => (
+                     <li key={index}>{point}</li>
+                   ))}
+                 </ul>
+               )}
 
-              <div className="technologies">
-                {selectedProject.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
-                ))}
-              </div>
+               {selectedProject.technologies && selectedProject.technologies.length > 0 && (
+                 <div className="technologies">
+                   {selectedProject.technologies.map((tech, index) => (
+                     <span key={index} className="tech-tag">{tech}</span>
+                   ))}
+                 </div>
+               )}
 
               <div className="project-links">
                 {selectedProject.devpost && (
@@ -259,6 +345,16 @@ function Projects() {
                     className="github-link"
                   >
                     View on GitHub <FontAwesomeIcon icon={faExternalLinkAlt} />
+                  </a>
+                )}
+                {selectedProject.website && (
+                  <a 
+                    href={selectedProject.website} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="website-link"
+                  >
+                    Visit Website <FontAwesomeIcon icon={faExternalLinkAlt} />
                   </a>
                 )}
               </div>

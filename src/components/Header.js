@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Heading } from '@radix-ui/themes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function TypewriterEffect({ words, typingSpeed = 100, deletingSpeed = 50, pauseDuration = 2000 }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -53,12 +56,11 @@ function Header() {
     'Researcher',
     'Programmer', 
     'Aspiring Salsa Dancer',
-    'Designer',
+    'Apparel Designer',
     'Live jazz enjoyer',
     'Stargazer',
     'EMT',
     'Tea aficionado',
-    'Student',
     'Cat mother',
     'Nature enjoyer',
     'Sewist',
@@ -69,6 +71,17 @@ function Header() {
     'Runner',
   ];
 
+  const scrollToAbout = () => {
+    // Find the about section within the current tab content
+    const tabContent = document.querySelector('.tab-content');
+    if (tabContent) {
+      const aboutSection = tabContent.querySelector('#about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <header>
       <div className="header-content">
@@ -76,6 +89,41 @@ function Header() {
         <p className="hero-subtitle">
           <TypewriterEffect words={words} />
         </p>
+        <div className="header-buttons">
+          <a 
+            href="/Danielle CV.pdf" 
+            download="Danielle_Whisnant_CV.pdf"
+            className="header-button cv-button"
+          >
+            <FontAwesomeIcon icon={faDownload} />
+            <span>CV</span>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/danielle-whisnant-60098a274/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="header-button linkedin-button"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+            <span>LinkedIn</span>
+          </a>
+          <a 
+            href="mailto:danielle_whisnant@brown.edu"
+            className="header-button email-button"
+          >
+            <FontAwesomeIcon icon={faEnvelope} />
+            <span>Email</span>
+          </a>
+        </div>
+      </div>
+      <div className="scroll-indicator">
+        <button 
+          className="scroll-arrow"
+          onClick={scrollToAbout}
+          aria-label="Scroll to about section"
+        >
+          <FontAwesomeIcon icon={faChevronDown} />
+        </button>
       </div>
     </header>
   );

@@ -8,7 +8,11 @@ function Professional() {
       title: "Epic Systems",
       authors: "Software Engineering Intern",
       bulletPoints: [
-        "Incoming intern for the summer of 2025 on Telehealth R&D team"
+        "Designed and programmed a full-stack, cloud-based computer vision hardware test (C#, React) for deployment in MyChart in 2026",
+        "Used OpenCV, MediaPipe, ResNet18, and fine-tuned YOLOv5 model for advanced computer vision applications",
+        "Conducted user research with providers to understand common technical barriers to video visits and most-at-risk populations",
+        "Identified state-level training and funding grants and programs to support FHIR integration into public health agencies",
+        "Drafted model state legislation that builds training programs to equip clinics with tools for post-deployment monitoring of AI systems"
       ]
     },
     {

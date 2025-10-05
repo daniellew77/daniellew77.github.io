@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Card, Text, Heading } from '@radix-ui/themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 function Academics() {
   const [expandedSections, setExpandedSections] = useState({});
+  const [showConcentrationModal, setShowConcentrationModal] = useState(false);
 
   const toggleSection = (sectionName) => {
     setExpandedSections(prev => ({
@@ -157,7 +158,7 @@ function Academics() {
         {
           id: 6,
           course: "APMA 1070",
-          title: "Quantitative Methods of Biological Systems",
+          title: "Quantitative Models of Biological Systems",
           description: "Mathematical modeling of biological systems; Systems biology; Biochemical reaction networks; Population dynamics; Systems pharmacology"
         },
         {
@@ -291,7 +292,13 @@ function Academics() {
 
   const renderDegreeCards = () => {
     return degrees.map(degree => (
-      <Card key={degree.id} className="degree-card">
+      <Card 
+        key={degree.id} 
+        className="degree-card"
+        data-is-mph={degree.degrees.includes("Master of Public Health in Digital Rights")}
+        onClick={degree.degrees.includes("Master of Public Health in Digital Rights") ? () => setShowConcentrationModal(true) : undefined}
+        style={degree.degrees.includes("Master of Public Health in Digital Rights") ? { cursor: 'pointer' } : {}}
+      >
         <div className="degree-list">
           {degree.degrees.map((deg, index) => (
             <Text key={index} as="p" className="degree-item">
@@ -302,6 +309,13 @@ function Academics() {
         <Text as="p" className="institution">
           {degree.institution}
         </Text>
+        {degree.degrees.includes("Master of Public Health in Digital Rights") && (
+          <div className="card-footer">
+            <span className="view-details">
+              More →
+            </span>
+          </div>
+        )}
       </Card>
     ));
   };
@@ -358,6 +372,52 @@ function Academics() {
           renderCourseworkSection(sectionName, courses)
         )}
       </div>
+
+      {/* Concentration Modal */}
+      {showConcentrationModal && (
+        <div className="modal-overlay" onClick={() => setShowConcentrationModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Digital Rights Concentration</h3>
+              <button 
+                className="modal-close-btn"
+                onClick={() => setShowConcentrationModal(false)}
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+            </div>
+            <div className="modal-body">
+              <div className="concentration-overview">
+                <h4>Concentration Framework</h4>
+                <p>
+                  My self-designed concentration investigates how emerging technologies intersect to undermine and support human rights and public health. I approach this issue from domestic and international policy frameworks, analyzing current disputes in digital governance and their impact on health equity.
+                </p>
+                
+                <h4>Thesis Focus</h4>
+                <p>
+                  <strong>"Algorithmic Shadows: Deciphering Social Media Takedowns of Public Health and Human Rights Documentation in Conflict Zones"</strong>
+                </p>
+                
+                <h4>Key Competencies</h4>
+                <ul>
+                  <li>Analyze how emerging digital technologies and global governance frameworks influence population health, equity, and institutional accountabilityy</li>
+                  <li>Apply public health legal frameworks to assess policy responses to emerging technologies</li>
+                  <li>Apply behavioral science theories to analyze how digital technologies influence health behaviors</li>
+                  <li>Design and critique strategies to monitor, evaluate, and improve digital public health interventions for equity and effectiveness</li>
+                </ul>
+                
+                <h4>Core Courses</h4>
+                <ul>
+                  <li><strong>IAPA 1811:</strong> Contemporary Digital Policy and Politics</li>
+                  <li><strong>PHP 1460:</strong> Public Health Law and Policy</li>
+                  <li><strong>PHP 1690:</strong> Technology and Health Behavior Change</li>
+                  <li><strong>IAPA 1804M:</strong> Overcoming Threats to Human Security</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

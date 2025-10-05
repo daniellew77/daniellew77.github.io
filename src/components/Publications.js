@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, Text, Heading, Link } from '@radix-ui/themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faTimes, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 function Publications() {
   const [selectedResearch, setSelectedResearch] = useState(null);
@@ -12,19 +12,21 @@ function Publications() {
       title: "Brown University Data in Society Collective (DISCO Lab)",
       authors: "Graduate Researcher for Dr. Harini Suresh in Department of Computer Science",
       description:
-        "Ongoing master's thesis investigating content moderation decisions in the context of human rights documentation"
+        "Ongoing master's thesis investigating content moderation decisions in the context of human rights documentation. Partnered with Mnemonic, a non-profit based in Germany that archives war crime documentation posted online by community-based investigators.",
+      titleLink: "https://discolab.cs.brown.edu/",
+      authorsLink: "https://harinisuresh.com/"
     }
   ];
 
   const pastResearch = [
-    // {
-    //   id: 1,
-    //   title: "The Use of Armed Escorts for Humanitarian Convoys in Conflict Zones",
-    //   organization: "Brown University Watson School for International and Public Affairs, Center for Human Rights and Humanitarian Studies",
-    //   shortDescription: "whatevs",
-    //   description: "Study in partnership with UN Office for the Coordination of Humanitarian Affairs (OCHA)",
-    //   link: "https://doi.org/10.26300/01t5-na83",
-    // },
+    {
+      id: 1,
+      title: "A Baseline Review of the Current Use of Armed Escorts for Humanitarian Convoys in Complex Emergencies",
+      organization: "Brown University Watson School for International and Public Affairs, Center for Human Rights and Humanitarian Studies",
+      shortDescription: "",
+      description: "Study in partnership with UN Office for the Coordination of Humanitarian Affairs. Shared globally with UN agencies and NGOs",
+      link: "https://chrhs.watson.brown.edu/sites/default/files/AE_Report_Final.pdf",
+    },
     {
       id: 2,
       title: "Delayed and Denied: How Florida's Six-Week Abortion Ban Criminalizes Medical Care",
@@ -97,10 +99,22 @@ function Publications() {
   const renderActiveResearchList = (publications) => {
     return publications.map(pub => (
       <Card key={pub.id} className="publication-item">
-        <Heading as="h2" size="5">{pub.title}</Heading>
-        <Text as="p" className="authors" size="3">
-          {pub.authors}
-        </Text>
+        <div className="title-with-link">
+          <Heading as="h2" size="5">
+            {pub.title}
+          </Heading>
+          <a href={pub.titleLink} target="_blank" rel="noopener noreferrer" className="external-link-icon">
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </a>
+        </div>
+        <div className="authors-with-link">
+          <Text as="p" className="authors" size="3">
+            {pub.authors}
+          </Text>
+          <a href={pub.authorsLink} target="_blank" rel="noopener noreferrer" className="external-link-icon">
+            <FontAwesomeIcon icon={faExternalLinkAlt} />
+          </a>
+        </div>
         <Text as="p" className="venue" size="2">
           {pub.venue}
         </Text>
@@ -120,6 +134,36 @@ function Publications() {
     ));
   };
 
+  const renderPastResearchList = (researchList) => {
+    return researchList.map(research => (
+      <Card 
+        key={research.id} 
+        className="publication-item" 
+        data-is-completed-research="true"
+        onClick={() => openResearchModal(research)} 
+        style={{ cursor: 'pointer' }}
+      >
+        <Heading as="h2" size="5">{research.title}</Heading>
+        <Text as="p" className="authors" size="3">
+          {research.organization}
+        </Text>
+        {research.award && (
+          <Text as="p" className="award-tag">
+            {research.award}
+          </Text>
+        )}
+        {research.shortDescription && (
+          <Text as="p" className="description" size="2">
+            {research.shortDescription}
+          </Text>
+        )}
+        <div className="card-footer">
+          <span className="view-details">More →</span>
+        </div>
+      </Card>
+    ));
+  };
+
   return (
     <div className="publications-section">
       <div className="research-section">
@@ -129,23 +173,7 @@ function Publications() {
       
       <div className="research-section">
         <h2 className="section-title">Completed Research</h2>
-        
-        {/* Research Cards Grid */}
-        <div className="research-grid">
-          {pastResearch.map(research => (
-            <div 
-              key={research.id} 
-              className="research-card"
-              onClick={() => openResearchModal(research)}
-            >
-              <h3>{research.title}</h3>
-              <p className="organization">{research.organization}</p>
-              <div className="card-footer">
-                <span className="view-details">More →</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        {renderPastResearchList(pastResearch)}
       </div>
 
       {/* Research Detail Modal */}
