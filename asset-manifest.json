@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/me/static/css/main.90efdef5.css",
-    "main.js": "/me/static/js/main.a43c933c.js",
+    "main.css": "/me/static/css/main.8a15c434.css",
+    "main.js": "/me/static/js/main.cc4f3039.js",
     "static/media/lullabieswhole.JPG": "/me/static/media/lullabieswhole.af90620faaf1b22f35fd.JPG",
     "static/media/marback.JPG": "/me/static/media/marback.99921b11c270922f1f6c.JPG",
     "static/media/fourier.mp4": "/me/static/media/fourier.af0e34ba7938d44a6d81.mp4",
@@ -28,25 +28,29 @@
     "static/media/skeety.jpg": "/me/static/media/skeety.df984665c2a7a110e8e3.jpg",
     "static/media/DSC_6825.jpg": "/me/static/media/DSC_6825.eb755468ada658f4e7f9.jpg",
     "static/media/DSC_6839.jpg": "/me/static/media/DSC_6839.df7cb87e5d88f18e6252.jpg",
+    "static/media/me_smile_headshot.png": "/me/static/media/me_smile_headshot.d4ed3983e41b2b3c8f4a.png",
     "static/media/giraffe_simulation.gif": "/me/static/media/giraffe_simulation.3e4ab9306d10754ccbcf.gif",
     "static/media/DSC_4476.jpg": "/me/static/media/DSC_4476.c42df0acaddec0d83f70.jpg",
     "static/media/groupstudio.jpg": "/me/static/media/groupstudio.3c9591ad94d819c3f7b6.jpg",
     "static/media/Copy of DSC03680.jpg": "/me/static/media/Copy of DSC03680.3eacaeb7d7e2b043f727.jpg",
     "static/media/DSC02282.jpg": "/me/static/media/DSC02282.b41b555938ec9c19b3f6.jpg",
     "static/media/DSC_6833.jpg": "/me/static/media/DSC_6833.922c87f84e23f9f9092a.jpg",
+    "static/media/peerakeet_home.jpeg": "/me/static/media/peerakeet_home.577049ceb9d62883b811.jpeg",
     "static/media/trio.jpg": "/me/static/media/trio.45a6a3686ce8f5df24db.jpg",
     "static/media/honey_simulation.gif": "/me/static/media/honey_simulation.bce1dd9398c5f3368139.gif",
     "static/media/leopard_simulation.gif": "/me/static/media/leopard_simulation.2f9c73f2de6debf38ae5.gif",
     "static/media/DSC02219.jpg": "/me/static/media/DSC02219.dea4946902e2b6c9ec0c.jpg",
     "static/media/DSC02245.jpg": "/me/static/media/DSC02245.c07ac315fa4c0a537d0d.jpg",
     "static/media/landing.jpeg": "/me/static/media/landing.9bb481eea9fdc9a53a64.jpeg",
-    "static/media/me_headshot.png": "/me/static/media/me_headshot.ede426db08feee003925.png",
     "static/media/DSC02197.jpg": "/me/static/media/DSC02197.ff1960a663e561d59c96.jpg",
+    "static/media/how_p_feels.jpg": "/me/static/media/how_p_feels.e1f4a4f7dd0e0684e979.jpg",
     "static/media/quiz_screen.jpeg": "/me/static/media/quiz_screen.7a2dc4f310b1843a8e67.jpeg",
+    "static/media/why_p_works.jpg": "/me/static/media/why_p_works.68d0947e39c6772815a7.jpg",
     "static/media/TrinityWilliams.jpg": "/me/static/media/TrinityWilliams.c553a013c1519908d466.jpg",
     "static/media/vid_screen.jpeg": "/me/static/media/vid_screen.e95a0223932c7548f8c0.jpeg",
     "static/media/stellafront.jpg": "/me/static/media/stellafront.4cdf1ff075084fb63111.jpg",
     "static/media/alaina1.jpg": "/me/static/media/alaina1.54df65d3c8c911a24f06.jpg",
+    "static/media/pilot_page.jpg": "/me/static/media/pilot_page.9fa815abf4162bc14528.jpg",
     "static/media/music_architecture.jpg": "/me/static/media/music_architecture.bccbb20c11ea8acd8ba6.jpg",
     "static/media/alizarunway.jpg": "/me/static/media/alizarunway.55b3582d251d80982f6f.jpg",
     "static/media/main.jpg": "/me/static/media/main.4152b3d20fd2a36326ea.jpg",
@@ -65,11 +69,11 @@
     "static/media/slick.ttf": "/me/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/me/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/me/index.html",
-    "main.90efdef5.css.map": "/me/static/css/main.90efdef5.css.map",
-    "main.a43c933c.js.map": "/me/static/js/main.a43c933c.js.map"
+    "main.8a15c434.css.map": "/me/static/css/main.8a15c434.css.map",
+    "main.cc4f3039.js.map": "/me/static/js/main.cc4f3039.js.map"
   },
   "entrypoints": [
-    "static/css/main.90efdef5.css",
-    "static/js/main.a43c933c.js"
+    "static/css/main.8a15c434.css",
+    "static/js/main.cc4f3039.js"
   ]
 }
