@@ -5,7 +5,5 @@
       <stop offset="100%" style="stop-color:#9D174D;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <g transform="translate(0, 2) scale(1.1)">
-    <path d="M16 2l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8l4-8z" fill="url(#starGradient)" stroke="#9D174D" stroke-width="0.5"/>
-  </g>
+  <path d="M16 2l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8l4-8z" fill="url(#starGradient)" stroke="#9D174D" stroke-width="0.5"/>
 </svg>

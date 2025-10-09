@@ -673,6 +673,15 @@ header h1 {
     box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4);
 }
 
+/* Light theme headshot shadow override */
+.light-theme .headshot {
+    box-shadow: 0 8px 25px rgba(190, 24, 93, 0.3);
+}
+
+.light-theme .headshot:hover {
+    box-shadow: 0 12px 35px rgba(190, 24, 93, 0.4);
+}
+
 
 .about-text p {
     text-align: left;
