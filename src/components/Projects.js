@@ -33,14 +33,36 @@ import peerakeetHowFeels from '../assets/images/how_p_feels.jpg';
 import peerakeetWhyWorks from '../assets/images/why_p_works.jpg';
 import peerakeetPilot from '../assets/images/pilot_page.jpg';
 
+import globaldisp1 from '../assets/images/globaldisp1.png';
+import globaldisp2 from '../assets/images/globaldisp2.png';
+import globaldisp3 from '../assets/images/globaldisp3.png';
+import globaldisp4 from '../assets/images/globaldisp4.png';
+
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
       id: 1,
+      title: "Global Displacement Atlas",
+      description: "An interactive global map of forced displacement and refugee flows across the world using UNHCR and UNRWA data.",
+      website: "https://displacement-atlas.vercel.app/",
+      github: "https://github.com/daniellew77/Displacement-Atlas",
+      media: [
+        { type: 'image', src: globaldisp1 },
+        { type: 'image', src: globaldisp2 },
+        { type: 'image', src: globaldisp3 },
+        { type: 'image', src: globaldisp4 }
+      ],
+      proseDescription: "I built an interactive 3D visualization mapping forced displacement and refugee flows across the world, inspired by the New York Times' article on global migration visualization.\n\nThis atlas specifically illuminates forced displacement—refugees and asylum seekers—using official data from UNHCR and UNRWA. The project makes migration visible on a global scale so people can explore and understand how displacement ebbs and flows over time.\n\nThe visualization features two modes: Flow View showing top 100 global displacement routes with year selector (2000-2024), and Explore Mode allowing users to click countries for detailed statistics. I implemented a comprehensive data processing pipeline that fetches from UNHCR/UNRWA APIs, transforms responses into standardized MigrationFlow objects, and generates 3D arcs with thickness based on displacement volume and animated dash patterns showing direction.\n\nTechnical implementation includes React 18 with TypeScript, react-globe.gl for Three.js-based interactive globe, and performance optimizations like aggressive caching, React.memo for expensive components, and WebGL acceleration for 60fps globe rotation.",
+      technologies: [
+        "React", "TypeScript", "Three.js", "WebGL", "Data Viz", "Geographic Data Processing"
+      ]
+    },
+    {
+      id: 2,
       title: "Peerakeet Website",
-      description: "CPO and Founding Engineer of digital peer-to-peer support startup creating safe, stigma-free spaces for students and young adults in addiction recovery.",
+      description: "CPO and Founding Engineer of digital peer-to-peer support startup creating stigma-free spaces for young adults in addiction recovery.",
       website: "https://www.peerakeet.com/",
       media: [
         { type: 'image', src: peerakeetLanding },
@@ -54,7 +76,7 @@ function Projects() {
       ]
     },
     {
-      id: 2,
+      id: 3,
       title: "Illuminate",
       description: "An LLM-powered educational video generator that creates animated explanations for any topic. Inspired by 3Blue1Brown's videos.",
       award: "👑 Best Use of Generative AI - Hack@Brown 2025 👑",
@@ -72,7 +94,7 @@ function Projects() {
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: "Music Genre Classifier",
       description: "A hybrid deep learning model combining 2D CNN and MLP architectures to classify music genres from spectrograms and audio features.",
       github: "https://github.com/Domingo-v/beatbox-1470",
@@ -87,7 +109,7 @@ function Projects() {
       ]
     },
     {
-      id: 4,
+      id: 5,
       title: "Cahn-Hilliard Animal Prints",
       description: "A mathematical simulation of pattern formation in nature using the Cahn-Hilliard equation, demonstrating how complex animal prints emerge.",
       github: "https://github.com/daniellew77/CahnHilliardAnimals",
@@ -107,7 +129,7 @@ function Projects() {
       ]
     },
     {
-      id: 5,
+      id: 6,
       title: "Gaussian Naive Bayes Classifier",
       description: "A Gaussian Naive Bayes classifier built from scratch for coronary heart disease diagnosis. Built without using existing ML libraries.",
       github: "https://github.com/daniellew77/GNBforCoronaryHeartDisease/blob/main/src/gaussiannaivebayes.ipynb",
@@ -123,7 +145,7 @@ function Projects() {
       ]
     },
     {
-      id: 6,
+      id: 7,
       title: "This website!",
       description: "Built with Javascript and React",
       isWebsiteCard: true 
@@ -188,25 +210,30 @@ function Projects() {
           >
             {project.id === 1 && (
               <div className="project-image">
-                <img src={peerakeetHome} alt="Peerakeet platform" />
+                <img src={globaldisp1} alt="Global Displacement Atlas" />
               </div>
             )}
             {project.id === 2 && (
               <div className="project-image">
-                <img src={illuminate3} alt="Illuminate video interface" />
+                <img src={peerakeetHome} alt="Peerakeet platform" />
               </div>
             )}
             {project.id === 3 && (
               <div className="project-image">
-                <img src={musicArchitecture} alt="Music Genre Classifier Architecture" />
+                <img src={illuminate3} alt="Illuminate video interface" />
               </div>
             )}
             {project.id === 4 && (
               <div className="project-image">
-                <img src={leopardGif} alt="Leopard pattern simulation" />
+                <img src={musicArchitecture} alt="Music Genre Classifier Architecture" />
               </div>
             )}
             {project.id === 5 && (
+              <div className="project-image">
+                <img src={leopardGif} alt="Leopard pattern simulation" />
+              </div>
+            )}
+            {project.id === 6 && (
               <div className="project-image">
                 <img src={gnbRoc} alt="GNB ROC Curve" />
               </div>
