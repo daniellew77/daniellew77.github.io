@@ -45,7 +45,7 @@ function Projects() {
     {
       id: 1,
       title: "Global Displacement Atlas",
-      description: "An interactive global map of forced displacement and refugee flows across the world using UNHCR and UNRWA data.",
+      description: "An interactive global map of forced displacement and refugee flows, using UNHCR, UNRWA, and IOM data.",
       website: "https://displacement-atlas.vercel.app/",
       github: "https://github.com/daniellew77/Displacement-Atlas",
       media: [
@@ -54,7 +54,7 @@ function Projects() {
         { type: 'image', src: globaldisp3 },
         { type: 'image', src: globaldisp4 }
       ],
-      proseDescription: "I built an interactive 3D visualization mapping forced displacement and refugee flows across the world, inspired by the New York Times' article on global migration visualization.\n\nThis atlas specifically illuminates forced displacement—refugees and asylum seekers—using official data from UNHCR and UNRWA. The project makes migration visible on a global scale so people can explore and understand how displacement ebbs and flows over time.\n\nThe visualization features two modes: Flow View showing top 100 global displacement routes with year selector (2000-2024), and Explore Mode allowing users to click countries for detailed statistics. I implemented a comprehensive data processing pipeline that fetches from UNHCR/UNRWA APIs, transforms responses into standardized MigrationFlow objects, and generates 3D arcs with thickness based on displacement volume and animated dash patterns showing direction.\n\nTechnical implementation includes React 18 with TypeScript, react-globe.gl for Three.js-based interactive globe, and performance optimizations like aggressive caching, React.memo for expensive components, and WebGL acceleration for 60fps globe rotation.",
+      proseDescription: "I built an interactive 3D visualization mapping forced displacement and refugee flows across the world, inspired by the New York Times' <a href='https://www.nytimes.com/interactive/2025/04/17/opinion/global-migration-facebook-data.html'>article</a> on global migration visualization.\n\nThis atlas specifically illuminates forced displacement—refugees, internally displaced persons, and asylum seekers—using official data from UNHCR, IOM, and UNRWA. The project makes migration visible on a global scale so people can explore and understand how displacement ebbs and flows over time.\n\nThe visualization features two modes: Global View showing the top 100 global displacement routes with year selector (2000-2024), and Explore Mode allowing users to click countries for detailed statistics. I implemented a comprehensive data processing pipeline that fetches from UNHCR/UNRWA/IOM APIs (more detail in Github repo), transforms responses into standardized MigrationFlow objects, and generates 3D arcs with thickness based on displacement volume and animated dash patterns showing direction.\n\nTechnical implementation includes React 18 with TypeScript, react-globe.gl for Three.js-based interactive globe, and performance optimizations like aggressive caching, React.memo for expensive components, and WebGL acceleration for 60fps globe rotation.",
       technologies: [
         "React", "TypeScript", "Three.js", "WebGL", "Data Viz", "Geographic Data Processing"
       ]
