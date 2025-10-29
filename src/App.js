@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { Theme } from '@radix-ui/themes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -199,6 +199,7 @@ function AppContent() {
                 </section>
               </div>
             } />
+            <Route path="/publications" element={<Navigate to="/research" replace />} />
             <Route path="/me" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
