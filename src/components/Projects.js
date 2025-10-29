@@ -62,7 +62,7 @@ function Projects() {
     {
       id: 2,
       title: "Peerakeet Website",
-      description: "CPO and Founding Engineer of digital peer-to-peer support startup creating stigma-free spaces for young adults in addiction recovery.",
+      description: "Built the website for a digital peer-to-peer support startup",
       website: "https://www.peerakeet.com/",
       media: [
         { type: 'image', src: peerakeetLanding },
@@ -70,9 +70,9 @@ function Projects() {
         { type: 'image', src: peerakeetWhyWorks },
         { type: 'image', src: peerakeetPilot }
       ],
-      proseDescription: "As CPO and Founding Engineer, I lead product strategy for an anonymous peer support addiction recovery platform that creates safe, stigma-free spaces for students and young adults.\n\nI develop the website (accessible at the link below) using React Native. The mobile app (available for piloting) is built with React Native. With Peerkeet, we are building on evidence-based therapeutic techniques like Motivational Interviewing and CBT. The platform leverages AI moderation with real-time crisis detection in under 10 milliseconds, FERPA & HIPAA aligned privacy protections with anonymous analytics for institutions, and a 24/7 continuous support network that prevents relapse patterns after acute treatment ends.",
+      proseDescription: "I developed Peerakeet's website (accessible at the link below) using React/Next.js.",
       technologies: [
-        "Full Stack Development", "Product Strategy", "Behavioral Science", "Mental Health Tech", "Startup Leadership"
+        "Website Development", "React", "Next.js" 
       ]
     },
     {
