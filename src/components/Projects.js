@@ -45,7 +45,7 @@ function Projects() {
     {
       id: 1,
       title: "Global Displacement Atlas",
-      description: "An interactive global map of forced displacement and refugee flows, using UNHCR, UNRWA, and IOM data.",
+      description: "An interactive global map of forced displacement and refugee flows, using UNHCR, UNRWA, IOM, and ACLED data.",
       website: "https://displacement-atlas.vercel.app/",
       github: "https://github.com/daniellew77/Displacement-Atlas",
       media: [
