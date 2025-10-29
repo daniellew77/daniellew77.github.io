@@ -2,40 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Danielle Whisnant's personal website"
-    />
-    <title>Danielle Whisnant</title>
-    <script defer="defer" src="/static/js/main.js"></script>
-    <link href="/static/css/main.css" rel="stylesheet">
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <title>Redirecting...</title>
     <script>
-      // GitHub Pages 404.html redirect for specific routes
+      // GitHub Pages 404.html redirect
       // This handles legacy /me route and other 404s
       var l = window.location;
       
       // Special handling for /me route - redirect to root
       if (l.pathname === '/me' || l.pathname === '/me/') {
         l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
-        return;
+      } else {
+        // For other 404s, redirect to root
+        l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
       }
-      
-      // For other 404s, redirect to root with hash routing
-      var pathSegmentsToKeep = 0;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
     </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
   </body>
 </html>
