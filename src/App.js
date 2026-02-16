@@ -54,7 +54,7 @@ function AppContent() {
     >
       <div className="app-container">
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="mobile-menu-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle navigation menu"
@@ -68,17 +68,17 @@ function AppContent() {
         <nav className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="sidebar-content">
             <div className="sidebar-header">
-              <h1 
+              <h1
                 onClick={() => switchTab('home')}
                 style={{ cursor: 'pointer' }}
               >
                 Danielle Whisnant
               </h1>
             </div>
-            
+
             <ul className="nav-menu">
               <li>
-                <button 
+                <button
                   className={`nav-item ${getActiveTab() === 'home' ? 'active' : ''}`}
                   onClick={() => switchTab('home')}
                 >
@@ -86,7 +86,7 @@ function AppContent() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   className={`nav-item ${getActiveTab() === 'academics' ? 'active' : ''}`}
                   onClick={() => switchTab('academics')}
                 >
@@ -94,7 +94,7 @@ function AppContent() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   className={`nav-item ${getActiveTab() === 'research' ? 'active' : ''}`}
                   onClick={() => switchTab('research')}
                 >
@@ -102,7 +102,7 @@ function AppContent() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   className={`nav-item ${getActiveTab() === 'professional' ? 'active' : ''}`}
                   onClick={() => switchTab('professional')}
                 >
@@ -110,7 +110,7 @@ function AppContent() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   className={`nav-item ${getActiveTab() === 'projects' ? 'active' : ''}`}
                   onClick={() => switchTab('projects')}
                 >
@@ -118,7 +118,7 @@ function AppContent() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   className={`nav-item ${getActiveTab() === 'apparel' ? 'active' : ''}`}
                   onClick={() => switchTab('apparel')}
                 >
@@ -126,16 +126,16 @@ function AppContent() {
                 </button>
               </li>
             </ul>
-            
+
             {/* Theme Toggle Button */}
             <div className="theme-toggle-container">
-              <button 
+              <button
                 className="theme-toggle-button"
                 onClick={toggleTheme}
                 aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
               >
-                <FontAwesomeIcon 
-                  icon={isDarkMode ? faSun : faMoon} 
+                <FontAwesomeIcon
+                  icon={isDarkMode ? faSun : faMoon}
                   className="theme-toggle-icon"
                 />
               </button>
@@ -145,7 +145,7 @@ function AppContent() {
 
         {/* Overlay for mobile menu */}
         {isMobileMenuOpen && (
-          <div 
+          <div
             className="mobile-menu-overlay"
             onClick={() => setIsMobileMenuOpen(false)}
           />
@@ -156,12 +156,12 @@ function AppContent() {
           <Routes>
             <Route path="/" element={
               <div className="tab-content">
-              <section className="section hero-section">
-                <Header />
-              </section>
-              <section className="section">
-                <About />
-              </section>
+                <section className="section hero-section">
+                  <Header />
+                </section>
+                <section className="section">
+                  <About />
+                </section>
               </div>
             } />
             <Route path="/academics" element={

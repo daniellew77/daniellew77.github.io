@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.3d8671e5.css",
-    "main.js": "/static/js/main.0b3e9ddb.js",
+    "main.js": "/static/js/main.c4bc2d96.js",
     "static/media/lullabieswhole.JPG": "/static/media/lullabieswhole.af90620faaf1b22f35fd.JPG",
     "static/media/marback.JPG": "/static/media/marback.99921b11c270922f1f6c.JPG",
     "static/media/fourier.mp4": "/static/media/fourier.af0e34ba7938d44a6d81.mp4",
@@ -39,7 +39,6 @@
     "static/media/Copy of DSC03680.jpg": "/static/media/Copy of DSC03680.3eacaeb7d7e2b043f727.jpg",
     "static/media/DSC02282.jpg": "/static/media/DSC02282.b41b555938ec9c19b3f6.jpg",
     "static/media/DSC_6833.jpg": "/static/media/DSC_6833.922c87f84e23f9f9092a.jpg",
-    "static/media/peerakeet_home.jpeg": "/static/media/peerakeet_home.577049ceb9d62883b811.jpeg",
     "static/media/trio.jpg": "/static/media/trio.45a6a3686ce8f5df24db.jpg",
     "static/media/honey_simulation.gif": "/static/media/honey_simulation.bce1dd9398c5f3368139.gif",
     "static/media/leopard_simulation.gif": "/static/media/leopard_simulation.2f9c73f2de6debf38ae5.gif",
@@ -47,15 +46,13 @@
     "static/media/DSC02245.jpg": "/static/media/DSC02245.c07ac315fa4c0a537d0d.jpg",
     "static/media/landing.jpeg": "/static/media/landing.9bb481eea9fdc9a53a64.jpeg",
     "static/media/DSC02197.jpg": "/static/media/DSC02197.ff1960a663e561d59c96.jpg",
-    "static/media/how_p_feels.jpg": "/static/media/how_p_feels.e1f4a4f7dd0e0684e979.jpg",
     "static/media/quiz_screen.jpeg": "/static/media/quiz_screen.7a2dc4f310b1843a8e67.jpeg",
-    "static/media/why_p_works.jpg": "/static/media/why_p_works.68d0947e39c6772815a7.jpg",
     "static/media/TrinityWilliams.jpg": "/static/media/TrinityWilliams.c553a013c1519908d466.jpg",
     "static/media/vid_screen.jpeg": "/static/media/vid_screen.e95a0223932c7548f8c0.jpeg",
     "static/media/stellafront.jpg": "/static/media/stellafront.4cdf1ff075084fb63111.jpg",
     "static/media/alaina1.jpg": "/static/media/alaina1.54df65d3c8c911a24f06.jpg",
-    "static/media/pilot_page.jpg": "/static/media/pilot_page.9fa815abf4162bc14528.jpg",
     "static/media/music_architecture.jpg": "/static/media/music_architecture.bccbb20c11ea8acd8ba6.jpg",
+    "static/media/heirloom2.png": "/static/media/heirloom2.b42fd1f387fc583bf7e6.png",
     "static/media/alizarunway.jpg": "/static/media/alizarunway.55b3582d251d80982f6f.jpg",
     "static/media/main.jpg": "/static/media/main.4152b3d20fd2a36326ea.jpg",
     "static/media/gnb_roc_curve.png": "/static/media/gnb_roc_curve.8b06a015d31dfd53e4d3.png",
@@ -65,19 +62,26 @@
     "static/media/gnb_feature_importance.png": "/static/media/gnb_feature_importance.be666ee0f7e050692e5a.png",
     "static/media/gnb_confusion_matrix.png": "/static/media/gnb_confusion_matrix.01dfc18abe00c5b13266.png",
     "static/media/gnb_architecture.png": "/static/media/gnb_architecture.0e095e7a33a12efd6a9a.png",
+    "static/media/heirloom6.jpg": "/static/media/heirloom6.c5c45c9631badb862af6.jpg",
     "static/media/giraffe_real.jpg": "/static/media/giraffe_real.db3a5929b27d13af98db.jpg",
+    "static/media/heirloom7.jpg": "/static/media/heirloom7.dd705074dbf31f1a19e2.jpg",
     "static/media/leopard_real.jpg": "/static/media/leopard_real.25c1c8a7ab02f51dabdc.jpg",
+    "static/media/heirloom8.jpg": "/static/media/heirloom8.ca93123faf9cad885faa.jpg",
+    "static/media/heirloom4.jpg": "/static/media/heirloom4.05a3612ade2a18b5b933.jpg",
+    "static/media/heirloom3.jpg": "/static/media/heirloom3.e2ece06c82573db0abe5.jpg",
     "static/media/honey_real.jpg": "/static/media/honey_real.c66db717220ddb4cffc8.jpg",
+    "static/media/heirloom5.jpg": "/static/media/heirloom5.e3404858af3bcaea9477.jpg",
+    "static/media/heirloom1.jpg": "/static/media/heirloom1.be32309e62b93c05b32e.jpg",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.3d8671e5.css.map": "/static/css/main.3d8671e5.css.map",
-    "main.0b3e9ddb.js.map": "/static/js/main.0b3e9ddb.js.map"
+    "main.c4bc2d96.js.map": "/static/js/main.c4bc2d96.js.map"
   },
   "entrypoints": [
     "static/css/main.3d8671e5.css",
-    "static/js/main.0b3e9ddb.js"
+    "static/js/main.c4bc2d96.js"
   ]
 }

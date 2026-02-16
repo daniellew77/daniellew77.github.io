@@ -27,11 +27,15 @@ import musicArchitecture from '../assets/images/music_architecture.jpg';
 import musicSpectrogramsPop from '../assets/images/music_spectrograms_pop.jpg';
 import musicSpectrogramsRock from '../assets/images/music_spectrograms_rock.jpg';
 // import musicLime from '../assets/images/music_lime_explanations.png';
-import peerakeetHome from '../assets/images/peerakeet_home.jpeg';
-import peerakeetLanding from '../assets/images/peerakeet_home.jpeg';
-import peerakeetHowFeels from '../assets/images/how_p_feels.jpg';
-import peerakeetWhyWorks from '../assets/images/why_p_works.jpg';
-import peerakeetPilot from '../assets/images/pilot_page.jpg';
+
+import heirloom1 from '../assets/images/heirloom1.jpg';
+import heirloom2 from '../assets/images/heirloom2.png';
+import heirloom3 from '../assets/images/heirloom3.jpg';
+import heirloom4 from '../assets/images/heirloom4.jpg';
+import heirloom5 from '../assets/images/heirloom5.jpg';
+import heirloom6 from '../assets/images/heirloom6.jpg';
+import heirloom7 from '../assets/images/heirloom7.jpg';
+import heirloom8 from '../assets/images/heirloom8.jpg';
 
 import globaldisp1 from '../assets/images/globaldisp1.png';
 import globaldisp2 from '../assets/images/globaldisp2.png';
@@ -57,7 +61,7 @@ function Projects() {
       proseDescription: (
         <>
           I built an interactive 3D visualization mapping forced displacement and refugee flows across the world, inspired by the New York Times'{" "}
-          <a 
+          <a
             href='https://www.nytimes.com/interactive/2025/04/17/opinion/global-migration-facebook-data.html'
             target="_blank"
             rel="noopener noreferrer"
@@ -79,18 +83,37 @@ function Projects() {
     },
     {
       id: 2,
-      title: "Peerakeet Website",
-      description: "Built the website for a digital peer-to-peer support startup",
-      website: "https://www.peerakeet.com/",
+      title: "Heirloom",
+      description: "A cross-generational storytelling platform connecting people seeking guidance with those who have lived experience.",
+      website: "https://www.findheirloom.com/",
+      devpost: "https://devpost.com/software/heirloom-ce1v8h",
       media: [
-        { type: 'image', src: peerakeetLanding },
-        { type: 'image', src: peerakeetHowFeels },
-        { type: 'image', src: peerakeetWhyWorks },
-        { type: 'image', src: peerakeetPilot }
+        { type: 'image', src: heirloom1 },
+        { type: 'image', src: heirloom2 },
+        { type: 'image', src: heirloom3 },
+        { type: 'image', src: heirloom4 },
+        { type: 'image', src: heirloom5 },
+        { type: 'image', src: heirloom6 },
+        { type: 'image', src: heirloom7 },
+        { type: 'image', src: heirloom8 }
       ],
-      proseDescription: "I developed Peerakeet's website (accessible at the link below) using React/Next.js.",
+      proseDescription: (
+        <>
+          For most of human history, wisdom traveled through conversation. Elders sat with the young. Stories were told out loud. The knowledge of how to live was passed tangibly down from person to person, in real time, in the same room. This is almost entirely gone now: we live in the most connected era in history and yet we are less verbally connected than any generation before us.
+          <br /><br />
+          Harvard's Global Flourishing Study found that people over 60 are the most flourishing age group on earth, while adults 18 to 24 are the least. The people who have figured the most out and the people who need it most have almost nothing to say to each other. Heirloom is a new medium to change this.
+          <br /><br />
+          <strong>For Storytellers:</strong> Heirloom guides users through an intimate, 20-30 minute conversational interview exploring their life experiences. The interviewer is fully voice-enabled with real-time conversation capabilities — users can speak naturally and interrupt the AI just as they would in a human conversation. We designed the entire interface with accessibility in mind: large, readable text, minimal distractions, and clear instructions.
+          <br /><br />
+          After the interview, Heirloom intelligently parses the conversation into individual story cards — each capturing the essence of a moment in the giver's words, including their age at the time and a standout quote. Givers can edit or delete any story before publishing. Automated moderation ensures stories meet community guidelines. When published, each story drops a seed that blossoms into a flower.
+          <br /><br />
+          <strong>For Story Finders:</strong> Finders undergo a brief, focused interview to understand what they're going through and what guidance they're seeking. The system screens for mental health crises, routing users to appropriate professional resources when needed. Using semantic vector search, Heirloom surfaces an archive of real experiences from people who've walked similar paths. Finders can read or listen to these stories, and most importantly, message the person who shared it.
+          <br /><br />
+          The platform is built as a full-stack Next.js application with Deepgram for real-time speech-to-text, Cartesia for natural text-to-speech, Claude for the interview engine and content moderation, OpenAI for semantic embeddings, and Supabase with pgvector for the database and vector search.
+        </>
+      ),
       technologies: [
-        "Website Development", "React", "Next.js" 
+        "Next.js", "TypeScript", "Claude", "OpenAI", "Deepgram", "Cartesia", "Supabase", "pgvector", "WebSockets"
       ]
     },
     {
@@ -166,7 +189,7 @@ function Projects() {
       id: 7,
       title: "This website!",
       description: "Built with Javascript and React",
-      isWebsiteCard: true 
+      isWebsiteCard: true
     }
   ];
 
@@ -185,7 +208,7 @@ function Projects() {
     if (item.type === 'video') {
       return (
         <div key={index} className="slide">
-          <video 
+          <video
             controls
             autoPlay={false}
             muted
@@ -217,12 +240,12 @@ function Projects() {
   return (
     <div className="projects-section">
       <h2 className="section-title">Projects</h2>
-      
+
       {/* Project Cards Grid */}
       <div className="projects-grid">
         {projects && projects.filter(project => !project.isWebsiteCard).map(project => (
-          <div 
-            key={project.id} 
+          <div
+            key={project.id}
             className="project-card"
             onClick={() => openProjectModal(project)}
           >
@@ -231,9 +254,10 @@ function Projects() {
                 <img src={globaldisp1} alt="Global Displacement Atlas" />
               </div>
             )}
+
             {project.id === 2 && (
               <div className="project-image">
-                <img src={peerakeetHome} alt="Peerakeet platform" />
+                <img src={heirloom1} alt="Heirloom platform" />
               </div>
             )}
             {project.id === 3 && (
@@ -280,8 +304,8 @@ function Projects() {
       {projects && projects.find(project => project.isWebsiteCard) && (
         <div className="website-card-container">
           {projects.filter(project => project.isWebsiteCard).map(project => (
-            <div 
-              key={project.id} 
+            <div
+              key={project.id}
               className="project-card website-card"
               style={{ cursor: 'default' }}
             >
@@ -301,12 +325,12 @@ function Projects() {
             <button className="modal-close" onClick={closeProjectModal}>
               <FontAwesomeIcon icon={faTimes} />
             </button>
-            
+
             <div className="modal-content">
               <div className="project-header">
                 <h2>{selectedProject.title}</h2>
               </div>
-              
+
               {selectedProject.award && (
                 <Text as="p" className="award-tag">
                   {selectedProject.award}
@@ -329,9 +353,9 @@ function Projects() {
 
               <div className="project-links">
                 {selectedProject.devpost && (
-                  <a 
-                    href={selectedProject.devpost} 
-                    target="_blank" 
+                  <a
+                    href={selectedProject.devpost}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="devpost-link"
                   >
@@ -339,9 +363,9 @@ function Projects() {
                   </a>
                 )}
                 {selectedProject.github && (
-                  <a 
-                    href={selectedProject.github} 
-                    target="_blank" 
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="github-link"
                   >
@@ -349,9 +373,9 @@ function Projects() {
                   </a>
                 )}
                 {selectedProject.website && (
-                  <a 
-                    href={selectedProject.website} 
-                    target="_blank" 
+                  <a
+                    href={selectedProject.website}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="website-link"
                   >
@@ -360,13 +384,13 @@ function Projects() {
                 )}
               </div>
 
-               {selectedProject.media && selectedProject.media.length > 0 && (
-                 <div className="project-slideshow">
-                   <Slider {...sliderSettings}>
-                     {selectedProject.media.map((item, index) => renderMediaItem(item, index))}
-                   </Slider>
-                 </div>
-               )}
+              {selectedProject.media && selectedProject.media.length > 0 && (
+                <div className="project-slideshow">
+                  <Slider {...sliderSettings}>
+                    {selectedProject.media.map((item, index) => renderMediaItem(item, index))}
+                  </Slider>
+                </div>
+              )}
             </div>
           </div>
         </div>
