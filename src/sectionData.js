@@ -1,7 +1,4 @@
-/* ============================================================
-   SECTION DATA
-   All real content from Danielle's site, lightly edited for the new layouts.
-   ============================================================ */
+import React from 'react';
 
 export const SECTION_DATA = {
   bio: {
@@ -23,9 +20,9 @@ export const SECTION_DATA = {
         year: "2026 — present",
         start: 2026,
         org: "Brown University · Department of Computer Science",
-        sub: "Data in Society Collective (DISCO Lab)",
+        sub: <a href="https://discolab.cs.brown.edu/" target="_blank" rel="noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>Data in Society Collective (DISCO Lab)</a>,
         role: "Graduate Student Researcher",
-        advisor: "Advised by Dr. Harini Suresh",
+        advisor: <>Advised by <a href="https://harinisuresh.com/" target="_blank" rel="noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>Dr. Harini Suresh</a></>,
         current: true,
         chipLabel: "Brown Department of Computer Science",
         bullets: [
@@ -37,8 +34,8 @@ export const SECTION_DATA = {
         year: "2026 — present",
         start: 2026.4,
         org: "Boston Children's Hospital · Harvard Medical School",
-        sub: "Computational Health Informatics Program (CHIP)",
-        advisor: "Advised by Dr. Maimuna Majumder",
+        sub: <a href="https://lab.maimunamajumder.com/" target="_blank" rel="noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>Computational Health Informatics Program (CHIP)</a>,
+        advisor: <>Advised by <a href="https://maimunamajumder.com/" target="_blank" rel="noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>Dr. Maimuna Majumder</a></>,
         role: "AI/ML Research Intern",
         current: true,
         chipLabel: "Boston Children's / Harvard Medical",
@@ -51,7 +48,7 @@ export const SECTION_DATA = {
         start: 2024,
         org: "Brown Watson School of International Affairs · Center for Human Rights and Humanitarian Studies",
         role: "Teaching Fellow · Humanitarian Research Analyst",
-        advisor: "Mentored by Professor David Polatty",
+        advisor: <>Mentored by <a href="https://home.watson.brown.edu/people/faculty/senior-fellows/david-polatty" target="_blank" rel="noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>Professor David Polatty</a></>,
         bullets: [
           "With Professor Polatty, I developed and co-taught IAPA 0310 (Reimagining Human Security), a course on human, national, and international security policy and practice, for two years. I designed the curriculum and course materials, which included foundational concepts in human security (humanitarian sector, UN, security council, etc.) and a survey of areas of human security (by week: armed conflict, climate, migration, gender and personal security, economic, health, food and water, technology). I led discussions in each class and lectured on migration and technology. I served as the only TA for this course, which grew from fifty to eighty students in one year, and mentored students in research and writing.",
           "Partnering with UN OCHA, I organized and co-led a team of twelve students to investigate policies governing armed escorts for humanitarian convoys in 30 countries with active conflict zones. This mixed-method study utilized surveys and interviews with subject matter experts around the world, including NGO leaders and UNOCHA officers. We compiled our findings into a comprehensive report, which was shared with UN agencies and other humanitarian actors to inform future practice.",
@@ -62,7 +59,7 @@ export const SECTION_DATA = {
         start: 2023,
         org: "Brown School of Public Health · Center for Alcohol and Addiction Studies",
         role: "Research Assistant",
-        advisor: "Advised by Dr. Lauren Micalizzi",
+        advisor: <>Advised by <a href="https://vivo.brown.edu/display/lmicaliz" target="_blank" rel="noreferrer" style={{color: 'inherit', textDecoration: 'underline'}}>Dr. Lauren Micalizzi</a></>,
         bullets: [
           "This lab was my introduction to participant-centered research. In it, I worked on the PATHWAYS project, a longitudinal study of adolescent substance use and mental health, which revisited moms that smoked tobacco during pregnancy and their now-adolescent children. I conducted in-person assessments with these moms and teens across Rhode Island and Southern Massachusetts, during which I conducted semi-structured interviews regarding participant substance use and mental health, administered computerized behavioral tasks, and collected anthropometrics.",
           "I mentored my fellow lab members in study procedures, and helped the lab transition to using R for data analysis.",

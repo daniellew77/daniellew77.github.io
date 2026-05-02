@@ -5,6 +5,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SECTION_DATA } from './sectionData';
 
+/* ---------- responsive helper ---------- */
+function useIsNarrow(breakpoint = 768) {
+  const [narrow, setNarrow] = useState(
+    typeof window !== 'undefined' ? window.innerWidth < breakpoint : false
+  );
+  useEffect(() => {
+    const onResize = () => setNarrow(window.innerWidth < breakpoint);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [breakpoint]);
+  return narrow;
+}
+
 /* ---------- tokens ---------- */
 const T = {
   bg: '#0d1130',                 // deep navy
@@ -156,7 +169,10 @@ function SectionOverlay({ animation = 'origin', backgroundUrl = 'assets/sunset_b
         overflow: 'auto',
       }}>
         <OverlayChrome eyebrow={section.eyebrow} title={section.title} onClose={close} />
-        <div style={{ maxWidth: 1180, margin: '0 auto', padding: '40px 64px 120px' }}>
+        <div style={{
+          maxWidth: 1180, margin: '0 auto',
+          padding: 'clamp(24px, 5vw, 40px) clamp(18px, 5vw, 64px) 120px',
+        }}>
           {hash === 'bio' && <BioSection data={section} />}
           {hash === 'academia' && <AcademiaSection data={section} />}
           {hash === 'work' && <WorkSection data={section} />}
@@ -213,16 +229,17 @@ function OverlayChrome({ eyebrow, title, onClose }) {
     }}>
       <div style={{
         maxWidth: 1180, margin: '0 auto',
-        padding: '28px 64px 22px',
+        padding: 'clamp(20px, 4vw, 28px) clamp(18px, 5vw, 64px) clamp(16px, 3vw, 22px)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        gap: 16,
       }}>
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{
-            fontFamily: T.body, fontSize: 13, color: T.accent, marginBottom: 12,
+            fontFamily: T.body, fontSize: 13, color: T.accent, marginBottom: 'clamp(6px, 1.5vw, 12px)',
           }}>{eyebrow}</div>
           <h2 style={{
             fontFamily: T.display, fontWeight: 400,
-            fontSize: 64, lineHeight: 1, letterSpacing: '-0.01em',
+            fontSize: 'clamp(32px, 7vw, 64px)', lineHeight: 1, letterSpacing: '-0.01em',
             margin: 0, fontStyle: 'italic',
           }}>{title}</h2>
         </div>
@@ -285,28 +302,34 @@ function highlightPhrases(text, phrases, color) {
 }
 
 function BioSection({ data }) {
+  const isNarrow = useIsNarrow(768);
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: '260px minmax(0, 620px)',
-      gap: 64, marginTop: 40,
-      justifyContent: 'start',
+      gridTemplateColumns: isNarrow ? '1fr' : '260px minmax(0, 620px)',
+      gap: isNarrow ? 28 : 64, marginTop: isNarrow ? 24 : 40,
+      justifyContent: isNarrow ? 'center' : 'start',
+      justifyItems: isNarrow ? 'center' : 'stretch',
+      textAlign: isNarrow ? 'center' : 'left',
     }}>
-      {/* Left: portrait */}
-      <div>
+      {/* Portrait — appears above the text on mobile */}
+      <div style={isNarrow ? { display: 'flex', justifyContent: 'center', width: '100%' } : undefined}>
         <img src={data.headshot} alt="Danielle Whisnant"
           style={{
-            width: 260, height: 320, objectFit: 'cover',
+            width: isNarrow ? 'min(260px, 70vw)' : 260,
+            height: isNarrow ? 'auto' : 320,
+            aspectRatio: isNarrow ? '260 / 320' : 'auto',
+            objectFit: 'cover',
             filter: 'sepia(0.08) saturate(0.95)',
             border: `1px solid ${T.hairStrong}`,
             display: 'block',
           }} />
       </div>
 
-      {/* Right: prose */}
-      <div>
+      {/* Prose */}
+      <div style={isNarrow ? { width: '100%' } : undefined}>
         <div style={{
-          fontFamily: T.display, fontSize: 22, lineHeight: 1.65,
+          fontFamily: T.display, fontSize: 'clamp(17px, 2.4vw, 22px)', lineHeight: 1.65,
           color: T.inkSoft, fontWeight: 300,
         }}>
           {data.paragraphs.map((p, i) => (
@@ -318,11 +341,13 @@ function BioSection({ data }) {
 
         {data.aside && (
           <div style={{
-            marginTop: 36, padding: '24px 28px',
-            borderLeft: `2px solid ${T.accent}`,
+            marginTop: 36, padding: 'clamp(18px, 3vw, 24px) clamp(20px, 3.5vw, 28px)',
+            borderLeft: isNarrow ? 'none' : `2px solid ${T.accent}`,
+            borderTop: isNarrow ? `2px solid ${T.accent}` : 'none',
             background: 'rgba(255,248,236,0.04)',
-            fontFamily: T.body, fontSize: 16, lineHeight: 1.6,
+            fontFamily: T.body, fontSize: 'clamp(14px, 1.8vw, 16px)', lineHeight: 1.6,
             color: T.inkSoft,
+            textAlign: isNarrow ? 'left' : 'left',
           }}>
             {data.aside}
           </div>
@@ -347,6 +372,7 @@ const ACADEMIA_SECTIONS = [
 function AcademiaSection({ data }) {
   const [active, setActive] = useState('intro');
   const refs = useRef({});
+  const isNarrow = useIsNarrow(880);
 
   // Scrollspy: which section is currently in view inside the overlay scroller
   useEffect(() => {
@@ -376,33 +402,50 @@ function AcademiaSection({ data }) {
 
   return (
     <div style={{
-      display: 'grid', gridTemplateColumns: '160px 1fr', gap: 64, marginTop: 40,
+      display: 'grid',
+      gridTemplateColumns: isNarrow ? '1fr' : '160px 1fr',
+      gap: isNarrow ? 24 : 64,
+      marginTop: isNarrow ? 24 : 40,
       alignItems: 'start',
     }}>
       {/* Left rail */}
-      <aside style={{ position: 'sticky', top: 140, alignSelf: 'start' }}>
-        <div style={{
-          fontFamily: T.display, fontSize: 16, fontStyle: 'italic', color: T.inkSoft, marginBottom: 18,
-          paddingBottom: 12, borderBottom: `1px solid ${T.hair}`,
-        }}>Contents</div>
-        <ol style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {ACADEMIA_SECTIONS.map((s, i) => {
+      <aside style={isNarrow ? {
+        position: 'static', overflowX: 'auto', paddingBottom: 8,
+      } : { position: 'sticky', top: 140, alignSelf: 'start' }}>
+        {!isNarrow && (
+          <div style={{
+            fontFamily: T.display, fontSize: 16, fontStyle: 'italic', color: T.inkSoft, marginBottom: 18,
+            paddingBottom: 12, borderBottom: `1px solid ${T.hair}`,
+          }}>Contents</div>
+        )}
+        <ol style={{
+          listStyle: 'none', margin: 0, padding: 0,
+          display: 'flex',
+          flexDirection: isNarrow ? 'row' : 'column',
+          gap: isNarrow ? 14 : 10,
+          flexWrap: 'nowrap',
+          ...(isNarrow ? { borderBottom: `1px solid ${T.hair}`, paddingBottom: 12 } : {}),
+        }}>
+          {ACADEMIA_SECTIONS.map((s) => {
             const isActive = active === s.id;
             return (
-              <li key={s.id}>
+              <li key={s.id} style={isNarrow ? { flexShrink: 0 } : undefined}>
                 <a href={`#academia/${s.id}`} onClick={jump(s.id)} style={{
                   display: 'flex', alignItems: 'center', gap: 12,
                   fontFamily: T.body, fontSize: 14, textDecoration: 'none',
                   color: isActive ? T.accent : T.inkSoft,
                   padding: '4px 0',
                   transition: 'color .25s ease',
+                  whiteSpace: 'nowrap',
                 }}>
-                  <span style={{
-                    width: isActive ? 22 : 12, height: 1,
-                    background: isActive ? T.accent : T.hair,
-                    transition: 'width .3s cubic-bezier(.2,.8,.2,1), background .25s ease',
-                    flexShrink: 0,
-                  }} />
+                  {!isNarrow && (
+                    <span style={{
+                      width: isActive ? 22 : 12, height: 1,
+                      background: isActive ? T.accent : T.hair,
+                      transition: 'width .3s cubic-bezier(.2,.8,.2,1), background .25s ease',
+                      flexShrink: 0,
+                    }} />
+                  )}
                   <span>{s.label}</span>
                 </a>
               </li>
@@ -426,7 +469,7 @@ function AcademiaSection({ data }) {
           <SectionLabel>Education</SectionLabel>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: isNarrow ? '1fr' : 'repeat(2, 1fr)',
             gap: 24,
             marginBottom: 72,
           }}>
@@ -443,14 +486,18 @@ function AcademiaSection({ data }) {
             color: T.ink, marginBottom: 28,
             paddingBottom: 14, borderBottom: `1px solid ${T.hair}`,
             letterSpacing: '-0.005em',
-            display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 16,
+            display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
+            gap: 16, flexWrap: 'wrap',
           }}>
             <span>Research</span>
             <span style={{
               fontFamily: T.body, fontSize: 13, fontStyle: 'italic',
               color: T.inkSoft, fontWeight: 400,
             }}>
-              Click on the timeline below to read about my work at each institution.
+              <span style={{ color: T.accent, marginRight: 6, fontStyle: 'normal' }}>★</span>
+              {isNarrow
+                ? 'Tap a role to read about my work at each institution.'
+                : 'Click on the timeline below to read about my work at each institution.'}
             </span>
           </div>
           <ResearchTimeline roles={data.research || []} />
@@ -464,17 +511,22 @@ function AcademiaSection({ data }) {
               <li key={i} style={{
                 padding: '24px 0',
                 borderBottom: i === data.publications.length - 1 ? 'none' : `1px solid ${T.hair}`,
-                display: 'grid', gridTemplateColumns: '48px 1fr auto', gap: 24, alignItems: 'baseline',
+                display: 'grid',
+                gridTemplateColumns: isNarrow ? '32px 1fr' : '48px 1fr auto',
+                columnGap: isNarrow ? 16 : 24,
+                rowGap: 12,
+                alignItems: 'baseline',
               }}>
                 <span style={{ fontFamily: T.mono, fontSize: 11, color: T.accent, }}>{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <div style={{ fontFamily: T.display, fontSize: 19, lineHeight: 1.35, color: T.ink, fontStyle: 'italic', marginBottom: 6 }}>{p.title}</div>
+                <div style={{ minWidth: 0 }}>
+                  <div style={{ fontFamily: T.display, fontSize: 'clamp(16px, 2.2vw, 19px)', lineHeight: 1.35, color: T.ink, fontStyle: 'italic', marginBottom: 6 }}>{p.title}</div>
                   <div style={{ fontFamily: T.body, fontSize: 13, color: T.inkSoft, marginBottom: p.note ? 4 : 0 }}>{p.org}</div>
                   {p.note && <div style={{ fontFamily: T.body, fontSize: 12, color: T.inkMuted, fontStyle: 'italic' }}>{p.note}</div>}
                 </div>
                 <a href={p.link} target="_blank" rel="noopener noreferrer" style={{
                   fontFamily: T.mono, fontSize: 11, color: T.accent, textDecoration: 'none', whiteSpace: 'nowrap',
                   borderBottom: `1px solid ${T.accent}`, paddingBottom: 2,
+                  ...(isNarrow ? { gridColumn: '2', justifySelf: 'start' } : {}),
                 }}>View →</a>
               </li>
             ))}
@@ -589,7 +641,7 @@ function DegreeDetailModal({ d, onClose }) {
       background: 'rgba(6, 8, 29, 0.72)',
       backdropFilter: 'blur(6px)',
       display: 'grid', placeItems: 'center',
-      padding: 32,
+      padding: 'clamp(12px, 3vw, 32px)',
       animation: 'degreeModalFadeIn .28s ease both',
     }}>
       <div onClick={(e) => e.stopPropagation()} style={{
@@ -597,7 +649,7 @@ function DegreeDetailModal({ d, onClose }) {
         border: `1px solid ${T.hairStrong}`,
         maxWidth: 720, width: '100%',
         maxHeight: '85vh', overflow: 'auto',
-        padding: '64px 56px 56px',
+        padding: 'clamp(40px, 6vw, 64px) clamp(20px, 5vw, 56px) clamp(36px, 5vw, 56px)',
         position: 'relative',
         animation: 'degreeModalSlideIn .35s cubic-bezier(.2,.8,.2,1) both',
       }}>
@@ -673,7 +725,7 @@ function DegreeDetailModal({ d, onClose }) {
                 )}
                 <div style={{
                   paddingBottom: 22,
-                  display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
+                  display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
                   columnGap: 28, rowGap: 0,
                 }}>
                   {d.coreCourses.map((c, k) => (
@@ -717,6 +769,86 @@ function ResearchTimeline({ roles }) {
   const sorted = [...roles].sort((a, b) => (a.start || 0) - (b.start || 0));
   const [openIdx, setOpenIdx] = useState(-1);
   const open = openIdx >= 0 ? sorted[openIdx] : null;
+  const isNarrow = useIsNarrow(880);
+
+  if (isNarrow) {
+    return (
+      <div style={{ marginBottom: 72 }}>
+        <ol style={{
+          listStyle: 'none', margin: 0, padding: 0,
+          borderTop: `1px solid ${T.hair}`,
+        }}>
+          {sorted.map((r, i) => {
+            const isOpen = openIdx === i;
+            return (
+              <li key={i} style={{ borderBottom: `1px solid ${T.hair}` }}>
+                <button onClick={() => setOpenIdx(isOpen ? -1 : i)} style={{
+                  width: '100%', background: 'transparent', border: 'none', cursor: 'pointer',
+                  padding: '16px 0', textAlign: 'left', color: T.ink,
+                  display: 'grid', gridTemplateColumns: '60px 1fr auto', gap: 16, alignItems: 'baseline',
+                }}>
+                  <span style={{
+                    fontFamily: T.mono, fontSize: 11, color: isOpen ? T.accent : T.inkMuted,
+                  }}>{r.year}</span>
+                  <span style={{
+                    fontFamily: T.display, fontStyle: 'italic', fontWeight: 400,
+                    fontSize: 16, lineHeight: 1.25, color: isOpen ? T.ink : T.inkSoft,
+                    minWidth: 0,
+                  }}>{r.chipLabel || shortenOrg(r.org)}</span>
+                  <span style={{
+                    fontFamily: T.mono, fontSize: 11, color: T.accent, whiteSpace: 'nowrap',
+                    transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform .3s ease', display: 'inline-block',
+                  }}>{isOpen ? '−' : '+'}</span>
+                </button>
+                <div style={{
+                  maxHeight: isOpen ? 1200 : 0,
+                  overflow: 'hidden',
+                  transition: 'max-height .45s cubic-bezier(.2,.8,.2,1)',
+                }}>
+                  {isOpen && (
+                    <div style={{
+                      padding: '4px 0 24px',
+                      display: 'grid', gridTemplateColumns: '1fr', gap: 14,
+                    }}>
+                      <h4 style={{
+                        fontFamily: T.display, fontSize: 'clamp(18px, 4vw, 22px)', lineHeight: 1.25, fontWeight: 400,
+                        fontStyle: 'italic', margin: 0, color: T.ink,
+                      }}>{r.org}</h4>
+                      <div style={{ fontFamily: T.display, fontSize: 14, color: T.inkSoft, fontStyle: 'italic' }}>
+                        {r.role}
+                      </div>
+                      {r.advisor && (
+                        <div style={{ fontFamily: T.body, fontSize: 12, color: T.inkMuted, lineHeight: 1.5 }}>
+                          {r.advisor}
+                        </div>
+                      )}
+                      {r.sub && (
+                        <div style={{ fontFamily: T.body, fontSize: 13, color: T.inkSoft, lineHeight: 1.5 }}>
+                          {r.sub}
+                        </div>
+                      )}
+                      <ul style={{
+                        margin: 0, padding: 0, listStyle: 'none',
+                        fontFamily: T.body, fontSize: 14, lineHeight: 1.6, color: T.inkSoft,
+                      }}>
+                        {r.bullets.map((b, j) => (
+                          <li key={j} style={{ paddingLeft: 18, position: 'relative', marginBottom: 6 }}>
+                            <span style={{ position: 'absolute', left: 0, top: 9, width: 6, height: 1, background: T.accent }} />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    );
+  }
 
   return (
     <div style={{ marginBottom: 72 }}>
@@ -769,16 +901,18 @@ function ResearchTimeline({ roles }) {
 
       {/* Detail card */}
       <div style={{
-        maxHeight: open ? 600 : 0,
+        maxHeight: open ? 800 : 0,
         overflow: 'hidden',
         transition: 'max-height .45s cubic-bezier(.2,.8,.2,1)',
       }}>
         {open && (
           <div style={{
-            padding: '28px 32px',
+            padding: 'clamp(20px, 3vw, 28px) clamp(20px, 3.5vw, 32px)',
             border: `1px solid ${T.hairStrong}`,
             background: 'rgba(255,248,236,0.025)',
-            display: 'grid', gridTemplateColumns: '200px 1fr', gap: 32,
+            display: 'grid',
+            gridTemplateColumns: isNarrow ? '1fr' : '200px 1fr',
+            gap: isNarrow ? 20 : 32,
           }}>
             <div>
               <div style={{ fontFamily: T.mono, fontSize: 11, color: T.accent, marginBottom: 14 }}>{open.year}</div>
@@ -831,6 +965,7 @@ function shortenOrg(s) {
 
 function CourseworkAccordion({ cat, items }) {
   const [open, setOpen] = useState(false);
+  const isNarrow = useIsNarrow(640);
   return (
     <div style={{ borderTop: `1px solid ${T.hair}` }}>
       <button onClick={() => setOpen(!open)} style={{
@@ -845,7 +980,11 @@ function CourseworkAccordion({ cat, items }) {
         </span>
       </button>
       {open && (
-        <div style={{ paddingBottom: 28, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 32px' }}>
+        <div style={{
+          paddingBottom: 28, display: 'grid',
+          gridTemplateColumns: isNarrow ? '1fr' : '1fr 1fr',
+          gap: isNarrow ? '12px 0' : '12px 32px',
+        }}>
           {items.map((c, i) => (
             <div key={i} style={{ paddingBottom: 12, borderBottom: `1px dashed ${T.hair}` }}>
               <div style={{ fontFamily: T.mono, fontSize: 11, color: T.accent, marginBottom: 3 }}>{c.code}</div>
@@ -883,24 +1022,29 @@ function WorkSection({ data }) {
 
 function WorkGroup({ roles, keyBase }) {
   const [openIdx, setOpenIdx] = useState(null);
+  const isNarrow = useIsNarrow(640);
+  const yearCol = isNarrow ? 60 : 120;
+  const spineX = isNarrow ? 56 : 110;
   return (
     <ol style={{ listStyle: 'none', margin: '0 0 32px', padding: 0, position: 'relative' }}>
       {/* spine */}
       <div style={{
-        position: 'absolute', left: 110, top: 8, bottom: 8,
+        position: 'absolute', left: spineX, top: 8, bottom: 8,
         width: 1, background: T.hair,
       }} />
       {roles.map((r, i) => (
         <WorkRow key={`${keyBase}-${i}`} role={r} idx={i}
           isOpen={openIdx === i}
           onToggle={() => setOpenIdx(openIdx === i ? null : i)}
-          isLast={i === roles.length - 1} />
+          isLast={i === roles.length - 1}
+          yearCol={yearCol}
+          spineX={spineX} />
       ))}
     </ol>
   );
 }
 
-function WorkRow({ role, idx, isOpen, onToggle, isLast }) {
+function WorkRow({ role, idx, isOpen, onToggle, isLast, yearCol = 120, spineX = 110 }) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -919,8 +1063,9 @@ function WorkRow({ role, idx, isOpen, onToggle, isLast }) {
 
   return (
     <li ref={ref} style={{
-      display: 'grid', gridTemplateColumns: '120px 1fr',
-      gap: 40, padding: isOpen ? '24px 0 32px' : '20px 0',
+      display: 'grid', gridTemplateColumns: `${yearCol}px 1fr`,
+      gap: yearCol === 60 ? 20 : 40,
+      padding: isOpen ? '24px 0 32px' : '20px 0',
       borderBottom: isLast ? 'none' : `1px solid ${T.hair}`,
       position: 'relative',
       opacity: inView ? 1 : 0,
@@ -932,20 +1077,11 @@ function WorkRow({ role, idx, isOpen, onToggle, isLast }) {
           fontFamily: T.mono, fontSize: 11, color: T.accent,
         }}>{role.year}</span>
         <span style={{
-          position: 'absolute', left: 110, top: 6, transform: 'translateX(-50%)',
+          position: 'absolute', left: spineX, top: 6, transform: 'translateX(-50%)',
           width: isOpen ? 12 : 9, height: isOpen ? 12 : 9, borderRadius: '50%',
           background: T.accent, boxShadow: `0 0 0 4px ${T.bg}`,
           transition: 'width .3s ease, height .3s ease',
         }} />
-        {/* pulse ring */}
-        {inView && (
-          <span aria-hidden style={{
-            position: 'absolute', left: 110, top: 6, transform: 'translate(-50%, -50%)',
-            width: 9, height: 9, borderRadius: '50%',
-            border: `1px solid ${T.accent}`,
-            animation: `workPing 1.4s ease-out ${idx * 0.04}s 1 both`, pointerEvents: 'none',
-          }} />
-        )}
       </div>
 
       <button onClick={onToggle} style={{
@@ -953,9 +1089,9 @@ function WorkRow({ role, idx, isOpen, onToggle, isLast }) {
         color: T.ink, cursor: 'pointer', width: '100%',
       }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 24 }}>
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
             <h3 style={{
-              fontFamily: T.display, fontSize: 26, lineHeight: 1.2, fontWeight: 400,
+              fontFamily: T.display, fontSize: 'clamp(20px, 3vw, 26px)', lineHeight: 1.2, fontWeight: 400,
               fontStyle: 'italic', margin: '0 0 4px', color: T.ink,
             }}>{role.org}</h3>
             <div style={{
@@ -996,12 +1132,6 @@ function WorkRow({ role, idx, isOpen, onToggle, isLast }) {
           </ul>
         </div>
       </button>
-      <style>{`
-        @keyframes workPing {
-          0%   { width: 9px; height: 9px; opacity: 1; }
-          100% { width: 36px; height: 36px; opacity: 0; }
-        }
-      `}</style>
     </li>
   );
 }
@@ -1025,6 +1155,7 @@ function ProjectsSection({ data }) {
 }
 
 function ProjectRow({ idx, project, open, onToggle, isLast }) {
+  const isNarrow = useIsNarrow(900);
   return (
     <li style={{
       borderTop: idx === 0 ? `1px solid ${T.hair}` : 'none',
@@ -1032,28 +1163,44 @@ function ProjectRow({ idx, project, open, onToggle, isLast }) {
     }}>
       <button onClick={onToggle} style={{
         width: '100%', background: 'transparent', border: 'none', cursor: 'pointer',
-        padding: '28px 0', textAlign: 'left', color: T.ink,
-        display: 'grid', gridTemplateColumns: '48px 1fr 1.4fr auto', gap: 28, alignItems: 'center',
+        padding: isNarrow ? '22px 0' : '28px 0', textAlign: 'left', color: T.ink,
+        display: 'grid',
+        gridTemplateColumns: isNarrow ? '32px 1fr auto' : '48px 1fr 1.4fr auto',
+        gap: isNarrow ? 16 : 28,
+        alignItems: 'center',
       }}>
         <span style={{ fontFamily: T.mono, fontSize: 11, color: T.accent, }}>{String(idx + 1).padStart(2, '0')}</span>
-        <h3 style={{
-          fontFamily: T.display, fontSize: 28, lineHeight: 1.15, fontWeight: 400,
-          fontStyle: 'italic', margin: 0, color: T.ink,
-        }}>{project.title}</h3>
-        <p style={{
-          margin: 0, fontFamily: T.body, fontSize: 14, lineHeight: 1.5, color: T.inkSoft,
-          opacity: open ? 0 : 1,
-          transition: 'opacity .25s ease',
-        }}>{project.blurb}</p>
+        <div style={{ minWidth: 0 }}>
+          <h3 style={{
+            fontFamily: T.display, fontSize: 'clamp(20px, 3.4vw, 28px)', lineHeight: 1.15, fontWeight: 400,
+            fontStyle: 'italic', margin: 0, color: T.ink,
+          }}>{project.title}</h3>
+          {isNarrow && !open && (
+            <p style={{
+              margin: '8px 0 0', fontFamily: T.body, fontSize: 13, lineHeight: 1.5, color: T.inkSoft,
+            }}>{project.blurb}</p>
+          )}
+        </div>
+        {!isNarrow && (
+          <p style={{
+            margin: 0, fontFamily: T.body, fontSize: 14, lineHeight: 1.5, color: T.inkSoft,
+            opacity: open ? 0 : 1,
+            transition: 'opacity .25s ease',
+          }}>{project.blurb}</p>
+        )}
         <span style={{
           fontFamily: T.mono, fontSize: 11, color: T.accent,
-          display: 'inline-block',
+          display: 'inline-block', whiteSpace: 'nowrap',
           transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
           transition: 'transform .3s ease',
         }}>{open ? '— close' : 'open +'}</span>
       </button>
       {open && (
-        <div style={{ paddingBottom: 40, display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 48 }}>
+        <div style={{
+          paddingBottom: 40, display: 'grid',
+          gridTemplateColumns: isNarrow ? '1fr' : '1.2fr 1fr',
+          gap: isNarrow ? 32 : 48,
+        }}>
           <div>
             {project.award && (
               <div style={{
