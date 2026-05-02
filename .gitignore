@@ -1,2 +1,8 @@
 node_modules
-Content.js
+assets/
+.env
+.vscode
+src/.DS_Store
+.gitignore
+build/
+.DS_Store
