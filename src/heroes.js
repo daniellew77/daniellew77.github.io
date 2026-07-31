@@ -13,7 +13,7 @@ const NAV = [
 
 // Edit these to update the CV / LinkedIn / Email links across the hero.
 const SOCIAL_LINKS = [
-  { label: 'CV', href: '/Danielle-Whisnant-CV.pdf' },
+  // { label: 'CV', href: '/Danielle-Whisnant-CV.pdf' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/danielle-whisnant/' },
   { label: 'Email', href: 'mailto:danielle_whisnant@brown.edu' },
 ];
